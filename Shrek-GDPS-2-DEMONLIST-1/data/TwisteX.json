@@ -1,0 +1,19 @@
+{
+    "id": "83",
+    "name": "TwisteX",
+    "author": "niko",
+    "creators": [],
+    "verifier": "niko",
+    "verification": "https://youtu.be/qoAe0qlddBM?si=FYSno7YB7vYuHpKs",
+    "password": "Locked with Password",
+    "percentToQualify": 63,
+    "difficulty": "Hard Demon",
+    "records": [
+       {
+            "user": "lucasestoes",
+            "link": "https://youtu.be/XU54RGK0zzg",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}

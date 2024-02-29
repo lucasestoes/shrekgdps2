@@ -1,0 +1,19 @@
+{
+    "id": "127",
+    "name": "Devils shithole",
+    "author": "lucasestoes",
+    "creators": [],
+    "verifier": "lucasestoes",
+    "verification": "https://youtu.be/XLzvKh6oG8w",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Insane Demon",
+    "records": [
+      {
+            "user": "niko",
+            "link": "https://youtu.be/d04J3blGNgY",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}
