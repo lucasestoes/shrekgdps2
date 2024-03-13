@@ -1,0 +1,25 @@
+{
+    "id": "5",
+    "name": "ZOEY NEVER CLEAR",
+    "author": "lucasestoes",
+    "creators": [],
+    "verifier": "lucasestoes",
+    "verification": "https://youtu.be/xC2hrOVogSY",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Hard Demon",
+    "records": [
+      {
+            "user": "niko",
+            "link": "https://youtu.be/MdCybwXTQ78",
+            "percent": 100,
+            "hz": 120
+        },
+      {
+            "user": "zSpunky",
+            "link": "https://youtu.be/-VPMbRvXZTU?si=t6MW6wjehoqyKcrd",
+            "percent": 100,
+            "hz": 60
+        }
+    ]
+}

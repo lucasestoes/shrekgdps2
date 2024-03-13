@@ -1,0 +1,19 @@
+{
+    "id": "22",
+    "name": "sean 2",
+    "author": "epsilon",
+    "creators": [],
+    "verifier": "GDpengon",
+    "verification": "https://youtu.be/L7pXoVaVIF0?si=isWWbumwAa8iOjih",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Easy Demon",
+    "records": [
+      {
+            "user": "niko",
+            "link": "https://youtu.be/0SKBHdyRlQo?si=-bIF3KAyK3HN2nVi",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}
