@@ -9,5 +9,11 @@
     "percentToQualify": 63,
     "difficulty": "Hard Demon",
     "records": [
+         {
+            "user": "lucasestoes",
+            "link": "https://youtu.be/f7AY2S5zFhU",
+            "percent": 100,
+            "hz": 180
+        }
     ]
 }
