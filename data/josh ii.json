@@ -1,0 +1,20 @@
+{
+    "id": "9",
+    "name": "josh II",
+    "author": "GDzoey",
+    "creators": [],
+    "verifier": "lucasestoes",
+    "verification":   
+"https://youtu.be/NgzUa3D6mgQ",
+    "password": "Locked with Password",
+    "percentToQualify": 73,
+    "difficulty": "Medium Demon",
+    "records": [
+      {
+            "user": "niko",
+            "link": "https://youtu.be/EPvWnQgcz-E",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}
