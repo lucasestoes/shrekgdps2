@@ -3,18 +3,12 @@
     "name": "josh II",
     "author": "GDzoey",
     "creators": [],
-    "verifier": "lucasestoes",
+    "verifier": "niko",
     "verification":   
-"https://youtu.be/NgzUa3D6mgQ",
+"https://youtu.be/ZvRgraB_9-c",
     "password": "Locked with Password",
     "percentToQualify": 73,
     "difficulty": "Medium Demon",
     "records": [
-      {
-            "user": "niko",
-            "link": "https://youtu.be/EPvWnQgcz-E",
-            "percent": 100,
-            "hz": 120
-        }
     ]
 }
