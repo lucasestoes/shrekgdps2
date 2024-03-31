@@ -10,6 +10,11 @@
     "percentToQualify": 73,
     "difficulty": "Medium Demon",
     "records": [
-        https://youtu.be/ir0on7BTWoU
+      {
+            "user": "Cleb",
+            "link": "https://youtu.be/ir0on7BTWoU",
+            "percent": 100,
+            "hz": 120
+      }
     ]
 }
