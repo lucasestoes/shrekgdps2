@@ -54,10 +54,10 @@ export default {
                             <div class="type-title-sm">Points when completed</div>
                             <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
                         </li>
-                         <li>
+                         li
                             <div class="type-title-sm">Difficulty</div>
                             <p>{{ level.difficulty}}</p>
-                        </li>
+                        li
                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 20"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
@@ -119,7 +119,7 @@ export default {
                         Do not use easy modes, only a record of the unmodified level qualifies
                     </p>
                     <p>
-                    Top 1 levels cannot be over the difficulty of Cataclysm. this rule is put in place to make sure the top levels arent vastly more difficult than the others. (This rule is subject to change once a new top 1 comes out)
+                    Top 1 levels cannot be over the difficulty of Bloodbath. this rule is put in place to make sure the top levels arent vastly more difficult than the others. (This rule is subject to change once a new top 1 comes out)
                     </p>
                     <p>
                     Reuploaded levels that are top 1 cannot be placed. This rule is in place to make sure the list doesnt have a million top 5s placed at the same time. This is effective as of August 13th, 2023.
