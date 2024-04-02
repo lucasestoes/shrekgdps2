@@ -1,0 +1,6 @@
+
+                         <li>
+                            <div class="type-title-sm">Difficulty</div>
+                            <p>{{ level.difficulty}}</p>
+                        </li>
+put the diff code in list.js underneath the score code
