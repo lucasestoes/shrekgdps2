@@ -9,5 +9,11 @@
     "percentToQualify": 100,
     "difficulty": "Hard Demon",
     "records": [
+      {
+            "user": "Cleb",
+            "link": "https://www.youtube.com/watch?v=xbHAKpOZPek&t=4s",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
