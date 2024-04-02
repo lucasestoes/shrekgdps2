@@ -12,6 +12,13 @@
             "user": "FORM",
             "link": "https://youtu.be/S8ignp7klwE",
             "percent": 100
+        },
+        
+      {
+            "user": "niko",
+            "link": "https://youtu.be/WYPbDRudkK0",
+            "percent": 100,
+            "hz": 120
         }
     ]
 }
