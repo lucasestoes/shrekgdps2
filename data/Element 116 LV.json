@@ -3,17 +3,11 @@
     "name": "Element 116 LV",
     "author": "epsilon",
     "creators": [],
-    "verifier": "niko",
-    "verification": "https://youtu.be/-gSQr1L_aOE?si=e_dX6MilA-Txbw3I",
+    "verifier": "lucasestoes",
+    "verification": "https://youtu.be/PeZtgH2mwCI?si=Xx5VVVq76NDR-CPN",
     "password": "Locked with Password",
     "percentToQualify": 72,
     "difficulty": "Extreme Demon",
     "records": [
-       {
-            "user": "lucasestoes",
-            "link": "https://youtu.be/PeZtgH2mwCI",
-            "percent": 100,
-            "hz": 120
-        }
     ]
 }
