@@ -9,5 +9,11 @@
     "percentToQualify": 72,
     "difficulty": "Extreme Demon",
     "records": [
+       {
+            "user": "lucasestoes",
+            "link": "https://youtu.be/PeZtgH2mwCI",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
