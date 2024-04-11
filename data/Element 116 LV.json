@@ -4,10 +4,16 @@
     "author": "epsilon",
     "creators": [],
     "verifier": "lucasestoes",
-    "verification": "https://youtu.be/PeZtgH2mwCI?si=Xx5VVVq76NDR-CPN",
+    "verification": "https://youtu.be/-gSQr1L_aOE?si=gQH7TyKKhp-fAkoR",
     "password": "Locked with Password",
     "percentToQualify": 72,
     "difficulty": "Extreme Demon",
     "records": [
+      {
+            "user": "lucasestoes",
+            "link": "https://youtu.be/WYPbDRudkK0",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
