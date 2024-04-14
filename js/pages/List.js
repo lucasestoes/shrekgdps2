@@ -54,6 +54,10 @@ export default {
                             <div class="type-title-sm">Points when completed</div>
                             <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
                         </li>
+                        <li>
+                            <div class="type-title-sm">Difficulty</div>
+                            <p>{{ level.difficulty}}</p>
+                        </li>
                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 20"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
