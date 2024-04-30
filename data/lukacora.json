@@ -1,12 +1,24 @@
 {
-    "id": "610",
     "name": "lukacora",
-    "author": "lucasestoes",
+    "author": "lukeisbes",
     "creators": [],
-    "verifier": "lucasestoes",
-    "verification": "https://www.youtube.com/watch?v=P0vf0hilLzE",
-    "password": "Free Copy",
-    "percentToQualify": 40,
+    "verifier": "lukeisbes",
+    "verification": "https://youtu.be/P0vf0hilLzE",
+    "password": "Locked with Password",
+    "percentToQualify": 46,
     "difficulty": "Extreme Demon",
     "records": [
       {
+            "user": "niko",
+            "link": "https://youtu.be/docBfxqmt28",
+            "percent": 100,
+            "hz":  120
+        },
+      {
+            "user": "lake",
+            "link": "https://youtu.be/Ayr__sdAQsE",
+            "percent": 100,
+            "hz":  240
+        }
+    ]
+}
