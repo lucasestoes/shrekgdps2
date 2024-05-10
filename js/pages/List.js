@@ -78,7 +78,7 @@ export default {
                     </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                    <p>SPACEUK WAS HERE</p>
+                    <p>GDZOEY LIKES MEN</p>
                 </div>
             </div>
             <div class="meta-container">
