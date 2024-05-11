@@ -7,7 +7,13 @@
     "verification": "https://youtu.be/cUe8ryBQSVo",
     "password": "Locked with Password",
     "percentToQualify": 40,
-    "difficulty": "Hard Demon",
+    "difficulty": "Easy Demon",
     "records": [
+      {
+            "user": "niko",
+            "link": "https://youtu.be/yfxr8WxkOqE",
+            "percent": 100,
+            "hz": 120
+      }
     ]
 }
