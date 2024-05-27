@@ -9,7 +9,10 @@
     "difficulty": "Easy Demon",
     "records": [
       {
-            
+            "user": "niko",
+            "link": "https://youtu.be/7bblgdr6220",
+            "percent": 100,
+            "hz": 120
       }
     ]
 }
