@@ -1,1 +1,12 @@
-
+{
+    "name": "the gateway",
+    "author": "epsilon",
+    "creators": [],
+    "verifier": "niko",
+    "verification": "https://youtu.be/GdmZuXlY_5Q",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Medium Demon",
+    "records": [
+    ]
+}
