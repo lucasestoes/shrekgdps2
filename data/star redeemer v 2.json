@@ -8,5 +8,11 @@
     "percentToQualify": 56,
     "difficulty": "Extreme Demon",
     "records": [
+         {
+            "user": "axo",
+            "link": "https://youtu.be/uYKXEzPeFWY",
+            "percent": 100,
+            "hz": 69420
+        }
     ]
 }
