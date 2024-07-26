@@ -1,0 +1,19 @@
+{
+    "id": "83",
+    "name": "ultra possible level",
+    "author": "pengon2",
+    "creators": [],
+    "verifier": "pengon2",
+    "verification": "https://www.youtube.com/watch?v=G34Gll_6KuY",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Medium Demon",
+    "records": [
+      {
+            "user": "niko",
+            "link": "https://www.youtube.com/watch?v=tg3otcMqgh8",
+            "percent": 100,
+            "hz": 120
+      }
+    ]
+}
