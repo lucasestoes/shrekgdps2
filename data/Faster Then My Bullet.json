@@ -9,5 +9,18 @@
     "percentToQualify": "blue level",
     "difficulty": "Inbeentween Demon",
     "records": [
+      {
+            "user": "niko",
+            "link": "https://youtu.be/Kmi9M2m7NMM",
+            "percent": 100,
+            "hz": cocaine
+        },
+        
+      {
+            "user": "luke's trumpet",
+            "link": "https://youtu.be/eA6YaNF4oSA",
+            "percent": 2076,
+            "hz": 3
+        }
     ]
 }
