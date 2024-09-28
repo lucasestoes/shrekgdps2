@@ -3,17 +3,9 @@
     "name": "Part of the day",
     "author": "GDzoey",
     "creators": [],
-    "verifier": "lucasestoes",
-    "verification": "https://youtu.be/Kxb5wirxdVg",
+    "verifier": "niko",
+    "verification": "https://youtu.be/YHwyTddWmeM",
     "password": "Locked with Password",
-    "percentToQualify": 63,
+    "percentToQualify": 100,
     "difficulty": "Easy Demon",
-    "records": [
-      {
-            "user": "niko",
-            "link": "https://youtu.be/Jgb7MrJVwOk",
-            "percent": 100,
-            "hz": 120
-        }
-    ]
-}
+    "records": 
