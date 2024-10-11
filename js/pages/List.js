@@ -99,7 +99,7 @@ export default {
                             </li>
                         </ol>
                     </template>
-                    <h3>Submission Requirements</h3>
+                    <h3>Submisioon Reirents</h3>
                     <p>
                         Achieved the record without using hacks (however, any FPS is allowed)
                     </p>
