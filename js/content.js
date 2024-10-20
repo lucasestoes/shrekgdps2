@@ -62,7 +62,7 @@ export async function fetchLeaderboard() {
             (u) => u.toLowerCase() === level.verifier.toLowerCase(),
         ) || level.verifier;
         scoreMap[verifier] ??= {
-            skibiditoilet: [],
+            verified: [],
             completed: [],
             progressed: [],
         };
