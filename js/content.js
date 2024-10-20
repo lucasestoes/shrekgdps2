@@ -1,4 +1,4 @@
-import { round, score } from './score.js';
+import { round, score } from './score.js'; 
 
 /**
  * Path to directory containing `_list.json` and all levels
@@ -62,7 +62,7 @@ export async function fetchLeaderboard() {
             (u) => u.toLowerCase() === level.verifier.toLowerCase(),
         ) || level.verifier;
         scoreMap[verifier] ??= {
-            verified: [],
+            skibiditoilet: [],
             completed: [],
             progressed: [],
         };
