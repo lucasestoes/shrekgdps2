@@ -25,6 +25,7 @@ export default {
                 <table class="list" v-if="list">
                     <tr v-for="([level, err], i) in list">
                         <td class="rank">
+                        <p v-if="i + 1 === 1" class="type-label-lg" class="top1">#{{ i + 1 }}</p>
                         <p v-else-if="i + 1 <= 25" class="type-label-lg">#{{ i + 1 }}</p>
                         <p v-else-if="i + 1 <= 100" class="extended">#{{ i + 1 }}</p>
                         <p v-else="i + 1 > 100" class="type-label-lg" class="legacy">–</p>
