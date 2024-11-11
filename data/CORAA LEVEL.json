@@ -1,9 +1,9 @@
 {
     "id": "83",
     "name": "CORAA LEVEL",
-    "author": "epsilon",
-    "creators": [],
-    "verifier": "epsilon",
+    "author": "SFEXTY",
+    "creators": ["CORAA"],
+    "verifier": "SFEXTY",
     "verification": "https://youtu.be/cUe8ryBQSVo",
     "password": "Locked with Password",
     "percentToQualify": 100,
