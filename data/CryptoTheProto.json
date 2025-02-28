@@ -1,1 +1,19 @@
-
+{
+    "id": "39",
+    "name": "CryptoTheProto",
+    "author": "pengon2",
+    "creators": [],
+    "verifier": "pengon2",
+    "verification": "https://youtu.be/151n_UWG6bs?si=GosgQgiTKUEZ1cTb",
+    "password": "Locked with Password",
+    "percentToQualify": 61,
+    "difficulty": "Extreme Demon",
+    "records": [
+      {
+            "user": "dylpnaner",
+            "link": "https://youtu.be/zkT78JNntQw",
+            "percent": 100,
+            "hz": 120
+      }
+    ]
+}
