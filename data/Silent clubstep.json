@@ -1,0 +1,20 @@
+{
+    "id": "5",
+    "name": "Silent clubstep",
+    "author": "lucasestoes",
+    "creators": [],
+    "verifier": "lucasestoes",
+    "verification": "https://youtu.be/Jk7sewl69Po",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Hard Demon",
+    "records": [
+      
+      {
+            "user": "niko",
+            "link": "https://youtu.be/-0z5lsfJLxE?si=wb7Uu6bVkmXu7pcJ",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}
