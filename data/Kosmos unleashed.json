@@ -8,19 +8,19 @@
     "percentToQualify": 66,
     "difficulty": "Extreme Demon",
     "records": [
-      {
-            "user": "FORM",
-            "link": "https://youtu.be/lVIGw9e6UNE",
-            "percent": 100,
-            "hz": 120
-      }
-    ],
-      {
-            "user": "Dylpnaner",
-            "link": "https://www.youtube.com/watch?v=gyh57xJcBmo",
-            "percent": 100,
-            "hz": 120
-        }
-    ]
+ 	 
+  	{
+        	"user": "FORM",
+        	"link": "https://youtu.be/lVIGw9e6UNE",
+        	"percent": 100,
+        	"hz": 120
+    	},
+  	{
+        	"user": "Dylpnaner",
+        	"link": "https://www.youtube.com/watch?v=gyh57xJcBmo",
+        	"percent": 100,
+        	"hz": 120
+    	}
+	]
 }
 
