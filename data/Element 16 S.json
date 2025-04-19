@@ -8,5 +8,11 @@
     "percentToQualify": 54,
     "difficulty": "Extreme Demon",
     "records": [
+      {
+            "user": "FORM",
+            "link": "https://youtu.be/ZY0h_LOuB-c",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
