@@ -7,13 +7,20 @@
     "verification": "https://youtu.be/ByYE0_Gt8Ns",
     "password": "Locked with Password",
     "percentToQualify": 61,
-    "difficulty": "Extreme Demon",
+    "difficulty": "Hard Demon",
     "records": [
       {
             "user": "Dylpnaner",
             "link": "https://www.youtube.com/watch?v=vRa1OzeAYdY",
             "percent": 100,
             "hz": 120
-      }
+        },
+        
+      {
+            "user": "niko",
+            "link": "https://youtu.be/7EqKvbzIhfk",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
