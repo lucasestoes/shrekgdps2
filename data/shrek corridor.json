@@ -9,5 +9,11 @@
     "percentToQualify": 100,
     "difficulty": "Insane Demon",
     "records": [
+      {
+            "user": "niko",
+            "link": "https://youtu.be/WHQXL9QhjuE",
+            "percent": 100,
+            "hz": 120
+      }
     ]
 }
