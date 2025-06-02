@@ -121,13 +121,13 @@ export default {
                         Do not use easy modes, only a record of the unmodified level qualifies
                     </p>
                     <p>
-                    Top 1 levels cannot be over the difficulty of Bloodbath. this rule is put in place to make sure the top levels arent vastly more difficult than the others. (This rule is subject to change once a new top 1 comes out)
+                    New Top 1 levels cannot be estimated to be over 50 spots (AREDL) above the previous top 1. However top 1 levels not placed for this reason can become top 1 once the distance is reasonable
                     </p>
                     <p>
-                    Reuploaded levels that are top 1 cannot be placed. This rule is in place to make sure the list doesnt have a million top 5s placed at the same time. This is effective as of August 13th, 2023.
+                    Reuploaded levels that are top 10 cannot be placed. This rule is in place to ensure the list doesn't have a million top 5s placed at the same time. This is effective as of August 13th, 2023.
                     </p>
                     <p>
-                    Levels that have a verifier outside of the server cannot be placed, but people inside the server that do beat it can make the level eligible to be placed.
+                    Levels that have a verifier outside of the server at the time of uploading cannot be placed. 
                     </p>
                 </div>
             </div>
