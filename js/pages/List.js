@@ -124,7 +124,7 @@ export default {
                     New Top 1 levels cannot be estimated to be over 50 spots (AREDL) above the previous top 1. However top 1 levels not placed for this reason can become top 1 once the distance is reasonable
                     </p>
                     <p>
-                    Reuploaded levels that are top 10 cannot be placed. This rule is in place to ensure the list doesn't have a million top 5s placed at the same time. This is effective as of August 13th, 2023.
+                    Reuploaded levels that are top 10 cannot be placed. However once a reuploaded level is theorized to be not top 10, then it can be placed. This is effective as of June 2nd 2025.
                     </p>
                     <p>
                     Levels that have a verifier outside of the server at the time of uploading cannot be placed. 
