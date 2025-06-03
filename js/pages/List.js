@@ -60,6 +60,10 @@ export default {
                             <div class="type-title-sm">Difficulty</div>
                             <p>{{ level.difficulty}}</p>
                         </li>
+                        <li>
+                            <div class="type-title-sm">Estimated GDDL Tier</div>
+                            <p>{{ level.gddltier}}</p>
+                        </li>
                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 50"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
