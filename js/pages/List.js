@@ -53,15 +53,15 @@ export default {
                     <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
                     <ul class="stats">
                         <li>
-                            <div class="type-title-sm">Points when completed</div>
+                            <div class="type-title-sm">Points:</div>
                             <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Difficulty</div>
+                            <div class="type-title-sm">Difficulty:</div>
                             <p>{{ level.difficulty}}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Estimated GDDL Tier</div>
+                            <div class="type-title-sm">Est. GDDL Tier:</div>
                             <p>{{ level.gddltier}}</p>
                         </li>
                     </ul>
