@@ -10,5 +10,11 @@
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
     "records": [
+      {
+            "user": "niko",
+            "link": "https://www.youtube.com/watch?v=PdGX97xlkRE",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
