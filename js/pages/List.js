@@ -125,9 +125,6 @@ export default {
                         Do not use easy modes, only a record of the unmodified level qualifies
                     </p>
                     <p>
-                    New Top 1 levels cannot be estimated to be over 75 spots (AREDL) or 1 spot (GDDL) above the previous top 1. However top 1 levels not placed for this reason can become top 1 once the distance is reasonable
-                    </p>
-                    <p>
                     Reuploaded levels that are top 10 cannot be placed. However once a reuploaded level is theorized to be not top 10, then it can be placed. This is effective as of June 2nd 2025.
                     </p>
                     <p>
