@@ -67,7 +67,7 @@ export default {
                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 50"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
-                    <p v-else-if="selected +1 <= 100"><strong>100%</strong> required (Extended List)</p>
+                    <p v-else-if="selected +1 <= 150"><strong>100%</strong> required (Extended List)</p>
                     <p v-else>This level does not accept new records.</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
@@ -93,7 +93,7 @@ export default {
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
                     <div class="og">
-                        <p class="type-label-md">Original List by <a href="TAK.com" target="_blank">TAK</a></p>
+                        <p class="type-label-md">Original List by <a href="TAK" target="_blank">TAK.com</a></p>
                     </div>
                     <template v-if="editors">
                         <h3>List Editors</h3>
