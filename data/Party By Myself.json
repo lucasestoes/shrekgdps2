@@ -2,11 +2,17 @@
     "name": "Party By Myself",
     "author": "barts0",
     "creators": [],
-    "verifier": "barts0",
+    "verifier": "axo",
     "verification": "https://youtu.be/S7VH6F7o4JM?si=J-1oA7kHv1rSouQL",
     "password": "Locked with Password",
     "percentToQualify": 67,
     "difficulty": "Insane Demon",
     "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/387dB2owfbI",
+            "percent": 100,
+            "hz": 180
+        }
     ]
 }
