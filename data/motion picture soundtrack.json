@@ -1,0 +1,19 @@
+{
+    "id": "15",
+    "name": "motion picture soundtrack",
+    "author": "pengon2",
+    "creators": [],
+    "verifier": "pengon2",
+    "verification": "https://youtu.be/KWD2XBE_7d4?si=SVL4T2veROI8AxWS",
+    "password": "Locked with Password",
+    "percentToQualify": "100",
+    "difficulty": "Hard Demon",
+    "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/e68gslPw8z8",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}
