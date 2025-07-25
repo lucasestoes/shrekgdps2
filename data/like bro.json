@@ -8,5 +8,11 @@
     "percentToQualify": "like bro",
     "difficulty": "Grandpa Demon",
     "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/5lSwZ9t5MVU",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
