@@ -1,0 +1,19 @@
+{
+    "id": "83",
+    "name": "ULTRA SHARP MINOR",
+    "author": "pengon",
+    "creators": [],
+    "verifier": "pengon",
+    "verification": "https://youtu.be/oCkWRqXJGYg",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Medium Demon",
+    "records": [
+      {
+            "user": "Niko",
+            "link": "https://www.youtube.com/watch?v=tg3otcMqgh8",
+            "percent": 100,
+            "hz": 120
+      }
+    ]
+}
