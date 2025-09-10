@@ -8,5 +8,11 @@
     "percentToQualify": 67,
     "difficulty": "Extreme Demon",
     "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/mdpMsGT5LjE",
+            "percent": 100,
+            "hz": 180
+        }
     ]
-}
+
