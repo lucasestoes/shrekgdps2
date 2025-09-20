@@ -61,8 +61,8 @@ export default {
                             <p>{{ level.difficulty}}</p>
                         </li>
                         <li>
-                            <div class="type-title-sm">Est. GDDL Tier:</div>
-                            <p>{{ level.gddltier}}</p>
+                            <div class="type-title-sm">Peak Placement</div>
+                            <p>{{ level.pplacement}}</p>
                         </li>
                     </ul>
                     <h2>Records</h2>
