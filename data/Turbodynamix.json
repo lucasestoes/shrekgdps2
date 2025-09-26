@@ -9,6 +9,7 @@
     "password": "Locked with Password",
     "percentToQualify": 40,
     "difficulty": "Insane Demon",
+    "pplacement": "25",
     "records": [
     ]
 }
