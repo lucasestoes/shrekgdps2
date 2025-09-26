@@ -8,6 +8,7 @@
     "password": "Locked with Password",
     "percentToQualify": 60,
     "difficulty": "Insane Demon",
+    "pplacement": "5",
     "records": [
       {
             "user": "niko",
