@@ -1,16 +1,17 @@
 {
     "id": "116",
     "name": "mental state",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "SFEXTY",
+    "verifier": "SFEXTI",
     "verification": "https://youtu.be/2ot2cZ6nBXw?si=5k0Nj86gpy_kYTkD",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
+    "pplacement": "28",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/zb583v3WV3U",
             "percent": 100,
             "hz": 120
