@@ -8,9 +8,10 @@
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Insane Demon",
+    "pplacement": "55",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/WHQXL9QhjuE",
             "percent": 100,
             "hz": 120
