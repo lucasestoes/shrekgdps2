@@ -1,12 +1,13 @@
 {
-    "name": "ticle harbour station",
+    "name": "tickle harbour station",
     "author": "pengon",
     "creators": [],
     "verifier": "pengon",
     "verification": "https://youtu.be/KWvDozzDurE",
     "password": "Locked with Password",
     "percentToQualify": 100,
-    "difficulty": "Insane Demon",
+    "difficulty": "Hard Demon",
+    "pplacement": "69",
     "records": [
     ]
 }
