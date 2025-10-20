@@ -1,15 +1,16 @@
 {
     "name": "base 2",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
     "verifier": "Cleb",
     "verification": "https://youtu.be/jdzBynoZQ3g?si=3f7DiFGT3LynxKJy&t=106",
     "password": "who cares",
     "percentToQualify": 100,
     "difficulty": "Medium Demon",
+    "pplacement": "33",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/jdzBynoZQ3g",
             "percent": 100,
             "hz": 120
