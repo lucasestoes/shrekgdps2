@@ -1,6 +1,6 @@
 {
     "name": "kamaboko but no",
-    "author": "GDzoey",
+    "author": "Zzoey",
     "creators": [],
     "verifier": "FORM",
     "verification": "https://youtu.be/RI9w_JK_0yQ?si=ePnxMFodvbocI-3u",
@@ -9,5 +9,11 @@
     "difficulty": "Hard Demon",
     "pplacement": "82",
     "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/LOOBRohdlbE",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
