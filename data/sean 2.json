@@ -1,16 +1,17 @@
 {
     "id": "22",
     "name": "sean 2",
-    "author": "epsilon",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "pengon2",
+    "verifier": "pengon",
     "verification": "https://youtu.be/L7pXoVaVIF0?si=isWWbumwAa8iOjih",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
+    "pplacement": "14",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/0SKBHdyRlQo?si=-bIF3KAyK3HN2nVi",
             "percent": 100,
             "hz": 120
