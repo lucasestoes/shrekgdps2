@@ -7,9 +7,10 @@
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
+    "pplacement": "39",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://www.youtube.com/watch?v=Mfb6w24zRyA",
             "percent": 100,
             "hz": 120
