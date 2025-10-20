@@ -1,16 +1,17 @@
 {
     "id": "116",
     "name": "AFX pads and orbs 2",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "SFEXTY",
+    "verifier": "SFEXTI",
     "verification": "https://youtu.be/cf5nH9Mv308",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
+    "pplacement": "15",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/VGcZiz3yLwg",
             "percent": 100,
             "hz": 120
