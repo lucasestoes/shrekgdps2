@@ -1,16 +1,17 @@
 {
     "id": "116",
     "name": "SHADE WAR",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "SFEXTY",
+    "verifier": "SFEXTI",
     "verification": "https://youtu.be/FgEIFUgrhdg?si=j-Sm84HxAq5fi5bH",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
+    "pplacement": "33",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/sQher83948Q",
             "percent": 100,
             "hz": 120
