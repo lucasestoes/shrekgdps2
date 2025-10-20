@@ -1,0 +1,19 @@
+{
+    "id": "116",
+    "name": "hardwired",
+    "author": "SFEXTI",
+    "creators": [],
+    "verifier": "lucas",
+    "verification": "https://youtu.be/cxg3kleal-I",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Insane Demon",
+    "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/VGcZiz3yLwg",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}
