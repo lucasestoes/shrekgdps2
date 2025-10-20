@@ -1,8 +1,8 @@
 {
     "name": "Stereo Insaneness",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "SFEXTY",
+    "verifier": "SFEXTI",
     "verification": "https://youtu.be/63Ye0aASQvM?si=qldqx77p6SZJ66p8",
     "password": "Locked with Password",
     "percentToQualify": 100,
@@ -16,7 +16,7 @@
         },
         
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/WYPbDRudkK0",
             "percent": 100,
             "hz": 120
