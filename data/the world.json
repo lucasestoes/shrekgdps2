@@ -1,15 +1,16 @@
 {
     "name": "the world",
-    "author": "pengon2",
+    "author": "pengon",
     "creators": [],
-    "verifier": "pengon2",
+    "verifier": "pengon",
     "verification": "https://youtu.be/FkATAKfR_Yo",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Medium Demon",
+    "pplacement": "52",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/UeBdmkr2NpU",
             "percent": 100,
             "hz": 120
