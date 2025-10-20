@@ -1,16 +1,17 @@
 {
     "id": "5",
     "name": "come by chance",
-    "author": "pengon2",
+    "author": "pengon",
     "creators": [],
-    "verifier": "pengon2",
+    "verifier": "pengon",
     "verification": "https://youtu.be/kR2tQ2OBQo4?si=w09PVsYQfOi4zHbN",
     "password": "Locked with Password",
-    "percentToQualify": 75,
+    "percentToQualify": 100,
     "difficulty": "Hard Demon",
+    "pplacement": "16",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/m0JqQlEwm0k",
             "percent": 100,
             "hz": 120
