@@ -2,15 +2,16 @@
     "name": "excursions",
     "author": "GDzoey",
     "creators": [],
-    "verifier": "pengon2",
+    "verifier": "pengon",
     "verification": "https://youtu.be/rS4MEfHRD6w?si=NeTrBX8S3bxKquza",
     "password": "Locked with Password",
     "percentToQualify": "100",
     "difficulty": "Easy Demon",
+    "pplacement": "52",
     "records": [
       
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/6t0kF2ApHwA",
             "percent": 100,
             "hz": 120
