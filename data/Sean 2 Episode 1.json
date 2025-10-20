@@ -1,15 +1,16 @@
 {
     "name": "Sean 2 Episode 1",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "SFEXTY",
+    "verifier": "SFEXTI",
     "verification": "https://youtu.be/wWmXzylI9_8?si=W6GtSnLTRbr1AIYa",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Medium Demon",
+    "pplacement": "25",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/oAd_Bf98G6Y?si=DXivBip7B3BVBKCB",
             "percent": 100,
             "hz": 120
