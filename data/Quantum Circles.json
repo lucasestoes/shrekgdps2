@@ -1,0 +1,19 @@
+{
+    "id": "83",
+    "name": "Quantum Circles",
+    "author": "lucasestoes",
+    "creators": [],
+    "verifier": "lucasestoes",
+    "verification": "https://youtu.be/TuGf2hiZZTc",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Medium Demon",
+    "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/tiO84fjSktQ",
+            "percent": 100,
+            "hz": 120
+      }
+    ]
+}
