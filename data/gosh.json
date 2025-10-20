@@ -1,16 +1,17 @@
 {
     "id": "116",
     "name": "gosh",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "SFEXTY",
+    "verifier": "SFEXTI",
     "verification": "https://youtu.be/f4SE5b2C6H8?si=eREfTZ1_PtVT71Ul",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Medium Demon",
+    "pplacement": "13",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/BSpeO4PwdAI",
             "percent": 100,
             "hz": 120
