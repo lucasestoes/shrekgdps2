@@ -9,15 +9,16 @@
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Medium Demon",
+    "pplacement": "3",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/bcW7tuSfG1Q",
             "percent": 100,
             "hz": 120
         }, 
       {
-            "user": "SFEXTY",
+            "user": "SFEXTI",
             "link": "https://youtu.be/ToxILKyTHt0?si=rpUgEbO3XVQUzwam",
             "percent": 100,
             "hz": 5758459
