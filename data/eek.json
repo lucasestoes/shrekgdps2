@@ -1,12 +1,13 @@
 {
     "name": "eek",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
     "verifier": "niko",
     "verification": "https://youtu.be/Q5szdRuByNc",
     "password": "Locked with Password",
     "percentToQualify": 41,
     "difficulty": "Hard Demon",
+    "pplacement": "20",
     "records": [
     ]
 }
