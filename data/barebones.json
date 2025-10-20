@@ -1,16 +1,17 @@
 {
     "id": "77",
     "name": "barebones",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
     "verifier": "Cleb",
     "verification": "https://youtu.be/8oNSdHV2cOg",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Medium Demon",
+    "pplacement": "6",
     "records": [
        {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/CuuFUed0qTw",
             "percent": 100,
             "hz": 120
