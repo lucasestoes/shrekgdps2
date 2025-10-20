@@ -5,11 +5,12 @@
     "verifier": "FORM",
     "verification": "https://youtu.be/NuY5UkWU1eM",
     "password": "Locked with Password",
-    "percentToQualify": 66,
-    "difficulty": "Extreme Demon",
+    "percentToQualify": 100,
+    "difficulty": "Hard Demon",
+    "pplacement": "18",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/sNxosHE-bdY?si=GRD1WDqVHHmYuMXt",
             "percent": 100,
             "hz": 180
