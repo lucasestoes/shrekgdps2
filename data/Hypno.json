@@ -1,16 +1,17 @@
 {
     "id": "39",
     "name": "Hypno",
-    "author": "pengon2",
+    "author": "pengon",
     "creators": [],
-    "verifier": "pengon2",
+    "verifier": "pengon",
     "verification": "https://youtu.be/EDPJ_jU901E?si=a8_O7etXUNCIcRY8",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
+    "pplacement": "87",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/DJJlm42VXrs",
             "percent": 100,
             "hz": 120
