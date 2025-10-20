@@ -2,7 +2,7 @@
 {
     "id": "39",
     "name": "Lilys compost",
-    "author": "GDzoey",
+    "author": "Zzoey",
     "creators": [],
     "verifier": "lucasestoes",
     "verification": "https://youtu.be/PEptmKiE-3c?si=UYILAwD-F6m8rEOJ",
@@ -10,6 +10,12 @@
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
     "pplacement": "100",
-    "records": [
+    "records":[
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/NdGICZIVVgc",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
