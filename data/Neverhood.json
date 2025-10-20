@@ -8,6 +8,7 @@
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Hard Demon",
+    "pplacement": "8",
     "records": [
       {
             "user": "Cleb",
@@ -17,7 +18,7 @@
         },
         
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/T69eql2IXZw",
             "percent": 100,
             "hz": 120
