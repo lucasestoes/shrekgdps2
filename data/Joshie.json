@@ -6,8 +6,9 @@
     "verifier": "niko",
     "verification": "https://youtu.be/mxgjkPBPYGc?si=6fXsoVBu4HybFlUT",
     "password": "Locked with Password",
-    "percentToQualify": 63,
+    "percentToQualify": 100,
     "difficulty": "Hard Demon",
+    "pplacement": "10",
     "records": [
     ]
 }
