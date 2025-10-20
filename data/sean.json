@@ -1,16 +1,17 @@
 {
     "id": "22",
     "name": "sean",
-    "author": "SFEXTY",
+    "author": "SFEXTI",
     "creators": [],
-    "verifier": "SFEXTY",
+    "verifier": "SFEXTI",
     "verification": "https://youtu.be/BNqvSZQuz7U",
     "password": "Locked with Password",
     "percentToQualify": 100,
     "difficulty": "Easy Demon",
+    "pplacement": "5",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://youtu.be/Kxzj_ECGWys",
             "percent": 100,
             "hz": 120
