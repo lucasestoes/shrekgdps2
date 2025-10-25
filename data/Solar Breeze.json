@@ -10,5 +10,11 @@
     "difficulty": "Extreme Demon",
     "pplacement": "10",
     "records": [
+      {
+            "user": "lucas.",
+            "link": "https://youtu.be/bpMYd6wWol8",
+            "percent": 100,
+            "hz": 120
+      }
     ]
 }
