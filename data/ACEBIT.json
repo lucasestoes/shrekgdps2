@@ -9,5 +9,18 @@
     "difficulty": "Extreme Demon",
     "pplacement": "9",
     "records": [
+      {
+            "user": "lucas",
+            "link": "https://youtu.be/H_QD-QmbxDE",
+            "percent": 100,
+            "hz": 120
+        },
+        
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/Vwpa2SXXxkQ",
+            "percent": 100,
+            "hz": 5758459
+        }
     ]
 }
