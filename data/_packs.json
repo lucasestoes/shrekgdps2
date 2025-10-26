@@ -1,7 +1,7 @@
 [
   {
     "name": "Josh Pack",
-    "color": "#0aaff0",
+    "color": "#5bd3ff",
     "levels": [
       100000,
       100001,
@@ -10,12 +10,13 @@
     ]
   },
   {
-    "name": "Josh Spinoff Pack",
+    "name": "Intermediate Frame Perfect Pack",
     "color": "#3db6e2",
     "levels": [
-      100004,
-      100005,
-      100006,
+      125917630,
+      120511707,
+      92626183,
+      92523890
     ]
   },
   {
