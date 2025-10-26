@@ -2,7 +2,7 @@ h1,
 .type-h1,
 .type-headline-lg {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 52px;
+    font-size: 51.4285714286px;
     line-height: 52px;
     font-weight: 700;
     letter-spacing: -2px;
@@ -155,11 +155,9 @@ input[type="text"],
 input[type="number"],
 .type-label-lg {
     font-family: "Lexend Deca", sans-serif;
-    font-size: 18px;
-    line-height: 16px;
-    font-size: 17px;
+    font-size: 17.1428571429px;
     line-height: 20px;
-    font-weight: 200;
+    font-weight: 500;
     -webkit-font-smoothing: subpixel-antialiased;
 }
 .type-label-lg::before {
@@ -209,7 +207,7 @@ input[type="number"],
     display: table;
 }
 
-p,
+p, button,
 .type-body {
     font-family: "Lexend Deca", sans-serif;
     font-size: 17.1428571429px;
