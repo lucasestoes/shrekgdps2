@@ -2,21 +2,21 @@
     {
         "name": "Josh Pack",
         "points": 50,
-        "levels": []
+        "levels": [josh, josh II, josh III, josh IV]
     },
     {
         "name": "Shrek Pack",
         "points": 100,
-        "levels": []
+        "levels": [Theory of Shrek, SHREK CIRCLES, shrek corridor]
     },
     {
         "name": "9 Circles Pack",
         "points": 150,
-        "levels": []
+        "levels": [Femboy Circles, Solar Breeze, IndiWave]
     },
     {
         "name": "Josh Spinoff Pack",
         "points": 50,
-        "levels": []
+        "levels": [hsoJ, joshua machine, Joshie]
     }
 ]
