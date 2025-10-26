@@ -1,1 +1,37 @@
-
+[
+    {
+        "name": "Josh Pack",
+        "color": "#05b6fc",
+        "levels": [
+            303,
+            460,
+            354,
+            450
+        ]
+    },
+    {
+        "name": "Shrek Pack",
+        "color": "#094004",
+        "levels": [
+            1488,
+            1131,
+            1346
+        ]
+    },
+    {
+        "name": "9 Circles Pack",
+        "color": "#05b6fc",
+        "levels": [
+            1799,
+            758,
+            1156
+        ]
+    },
+    {
+        "name": "Josh Spinoff Pack",
+        "color": "#20a4b3",
+        "levels": [
+            360, 676, 1505
+        ]
+    }
+]
