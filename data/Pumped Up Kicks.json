@@ -1,9 +1,9 @@
 {
     "id": "83",
     "name": "Pumped Up Kicks",
-    "author": "GDzoey",
-    "creators": [],
-    "verifier": "niko",
+    "author": "Zzoey",
+    "creators": ["ZeklyrXF", "Zzoey", "Niko"],
+    "verifier": "Niko",
     "verification": "https://youtu.be/6EV6xqVn0N0?si=Wu91d793-jSZsohq",
     "password": "Locked with Password",
     "percentToQualify": 59,
