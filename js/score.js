@@ -12,7 +12,7 @@ const scale = 2;
  */
 export function score(rank, percent, minPercent) {
     if (rank > 100) {
-        return 0;
+        return 10;
     }
     if (rank > 50 && percent < 100) {
         return 0;
