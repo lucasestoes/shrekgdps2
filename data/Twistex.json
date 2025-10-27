@@ -1,9 +1,9 @@
 {
     "id": "83",
     "name": "Twistex",
-    "author": "niko",
-    "creators": [],
-    "verifier": "niko",
+    "author": "Niko",
+    "creators": ["Zzoey", "Niko"],
+    "verifier": "Niko",
     "verification": "https://youtu.be/en8dxvrgfUU",
     "password": "Locked with Password",
     "percentToQualify": 63,
