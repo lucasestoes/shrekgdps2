@@ -1,9 +1,9 @@
 {
     "id": "83",
     "name": "Denver Broncos",
-    "author": "niko",
-    "creators": [],
-    "verifier": "niko",
+    "author": "Niko",
+    "creators": ["lucasestoes", "Niko"],
+    "verifier": "Niko",
     "verification": "https://youtu.be/EMUaf_0mjWo?si=sMARCNn5TbIkf2KB",
     "password": "Locked with Password",
     "percentToQualify": 63,
