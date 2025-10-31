@@ -9,5 +9,11 @@
     "difficulty": "Medium Demon",
     "pplacement": "83",
     "records": [
+      {
+            "user": "Niko",
+            "link": "https://www.youtube.com/watch?v=YqEDymQAxHY",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
