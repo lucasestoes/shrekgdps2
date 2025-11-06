@@ -27,6 +27,13 @@
             "link": "https://www.youtube.com/watch?v=_0p6b0R6AFc&ab_channel=Fid",
             "percent": 100,
             "hz": 60
-        }
-    ]
+        },
+  	{
+        	"user": "GDoof",
+        	"link": "https://youtu.be/yvS-F9txkYA?si=ACzXbNAGRsd6cc68",
+        	"percent": 100,
+        	"hz": 120,
+            "mobile": true
+    	}
+	]
 }
