@@ -11,16 +11,16 @@
     "records": [
       {
             "user": "Niko",
-            "link": "https://youtu.be/lIbLfTQBj_w?si=ohjVe_X8z7Mzzzm8",
+            "link": "https://youtu.be/cSghfSXyMlM",
             "percent": 100,
             "hz": 120
         },
         
       {
             "user": "GDoof",
-            "link": "https://youtu.be/vqcIBOMapbs?si=FZDeeVYCb0hCl9pb",
+            "link": "https://youtu.be/vqcIBOMapbs",
             "percent": 100,
-            "hz": 5758459
+            "hz": 5758459,
             "mobile": true
         }
     ]
