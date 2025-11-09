@@ -10,12 +10,17 @@
     "pplacement": "4",
     "records": [
       {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://www.youtube.com/watch?v=cSghfSXyMlM",
             "percent": 100,
             "hz": 120
-      
-      }
-
+      },
+        
+      {
+            "user": "GDoof",
+            "link": "https://youtu.be/vqcIBOMapbs",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
