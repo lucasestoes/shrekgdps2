@@ -1,0 +1,20 @@
+{
+    "id": "3939939",
+    "name": "REMEMBER",
+    "author": "spectrum",
+    "creators": [],
+    "verifier": "PoisonousGuy",
+    "verification": "https://www.youtube.com/watch?v=-b76ly8NvDw",
+    "password": "Locked with Password",
+    "percentToQualify": 100,
+    "difficulty": "Hard Demon",
+    "pplacement": "75",
+    "records": [
+      {
+            "user": "Niko",
+            "link": "https://youtu.be/zPnQXqceZps",
+            "percent": 100,
+            "hz": 120
+        }
+    ]
+}
