@@ -1,9 +1,9 @@
 {
     "id": "39",
     "name": "play my map",
-    "author": "razing717",
+    "author": "unruffled",
     "creators": [],
-    "verifier": "razing717",
+    "verifier": "unruffled",
     "verification": "https://www.youtube.com/watch?v=noqfH2MccMM",
     "password": "Locked with Password",
     "percentToQualify": 56,
@@ -11,7 +11,7 @@
     "pplacement": "24",
     "records": [
        {
-            "user": "niko",
+            "user": "Niko",
             "link": "https://www.youtube.com/watch?v=cPV5WkfZmTY",
             "percent": 100,
             "hz": 120
