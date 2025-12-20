@@ -14,6 +14,19 @@
             "link": "https://youtube.com/watch?v=1M4Hn0_vg5Q",
             "percent": 100,
             "hz": 240
+        },
+        
+      {
+            "user": "zoewithoutwhy",
+            "link": "https://youtu.be/bsuQIyQ4-Uc",
+            "percent": 100,
+            "hz": 240
+        },
+        {
+            "user": "LilPump",
+            "link": "https://youtu.be/wXimWwThvPo?si=k6MDWh8NXCb4q0Qt",
+            "percent": 100,
+            "hz": 240
         }
     ]
 }
