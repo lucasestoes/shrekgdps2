@@ -2,7 +2,7 @@
     "id": "39",
     "name": "CryptoTheProto",
     "author": "pengon",
-    "creators": ["CrryptoTheProto", "pengon"],
+    "creators": ["CryptoTheProto", "pengon"],
     "verifier": "pengon",
     "verification": "https://youtu.be/ByYE0_Gt8Ns",
     "password": "Locked with Password",
@@ -20,6 +20,12 @@
       {
             "user": "Niko",
             "link": "https://youtu.be/7EqKvbzIhfk",
+            "percent": 100,
+            "hz": 120
+        },
+           {
+            "user": "CryptoTheProto",
+            "link": "https://youtu.be/FlefutFGSe4",
             "percent": 100,
             "hz": 120
         }
