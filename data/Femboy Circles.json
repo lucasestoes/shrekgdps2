@@ -12,6 +12,13 @@
     "pplacement":"10",
     "records": [
       {
+            "user": "fidw",
+            "link": "https://youtu.be/zJduup11vNE?si=eghP0BD-vNk0gVxK",
+            "percent": 100,
+            "hz": 120
+      },
+        
+      {
             "user": "barts0",
             "link": "https://youtu.be/FEfZQVChdWk",
             "percent": 53,
