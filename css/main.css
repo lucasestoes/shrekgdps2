@@ -13,7 +13,7 @@ main.dark,
 header.dark {
     color-scheme: dark;
     --color-background:  #1b1d1b;
-    --color-on-background: white;
+    --color-on-background: #FFF6D4;
     --color-selected: #274023;
     --color-extended: #E5FFD4;
     --color-background-hover: #121612;
