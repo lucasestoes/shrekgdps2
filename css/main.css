@@ -15,12 +15,12 @@ header.dark {
     --color-background:  #1b1d1b;
     --color-on-background: #FFF6D4;
     --color-selected: #274023;
-    --color-extended: #E5FFD4;
+    --color-extended: #FFFFFF;
     --color-background-hover: #121612;
     --color-on-background-hover: white;
     --color-primary:   #FFFFFF;
     --color-primary-disabled: #1f213c;
-    --color-on-primary: #FFF6D4;
+    --color-on-primary: #FFFFFF;
     --color-error: #de0000;
     --color-on-error: white;
 
