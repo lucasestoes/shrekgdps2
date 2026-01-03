@@ -27,8 +27,8 @@ export default {
                         <td class="rank"> 
                         <p v-if="i + 1 <= 10" class="type-label-lg" class="top10">#{{ i + 1 }}</p>
                          <p v-else-if="i + 1 <= 50" class="type-label-lg">#{{ i + 1 }}</p>
-                         <p v-else-if="i + 1 <= 100" class="extended">#{{ i + 1 }}</p>
-                         <p v-else="i + 1 > 150" class="type-label-lg">#{{ i + 1 }}</p>
+                         <p v-else-if="i + 1 <= 100" class="type-label-lg">#{{ i + 1 }}</p>
+                         <p v-else="i + 1 > 150" class="extended">#{{ i + 1 }}</p>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
@@ -67,8 +67,8 @@ export default {
                     </ul>
                     <h2>Records</h2>
                     <p v-if="selected + 1 <= 50"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
-                    <p v-else-if="selected +1 <= 100"><strong>100%</strong> required (Extended List)</p>
-                    <p v-else>This level does not accept new records.</p>
+                    <p v-else-if="selected +1 <= 100"><strong>100%</strong> required (Ascended List)</p>
+                    <p v-else>"selected +1 <= 150"><strong>100%</strong> required (Extended List)</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
