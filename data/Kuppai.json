@@ -10,5 +10,11 @@
     "difficulty": "Easy Demon",
     "pplacement": "139",
     "records": [
+      {
+            "user": "nikole",
+            "link": "https://youtu.be/q7W3c4Q4aFQ",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
