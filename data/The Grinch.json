@@ -9,11 +9,19 @@
     "difficulty": "Medium Demon",
     "pplacement": "83",
     "records": [
-      {
+       {
             "user": "nikole",
             "link": "https://www.youtube.com/watch?v=YqEDymQAxHY",
             "percent": 100,
             "hz": 120
+        },
+
+{
+         "user": "Freeman",
+            "link": "https://www.youtube.com/watch?v=s7t_Jt8Mn4w",
+            "percent": 100,
+            "hz": 75
         }
     ]
 }
+
