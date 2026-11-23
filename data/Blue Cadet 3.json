@@ -15,11 +15,18 @@
             "link": "https://youtu.be/lIbLfTQBj_w?si=ohjVe_X8z7Mzzzm8",
             "percent": 100,
             "hz": 120
-        },
+         },
         
       {
             "user": "axo",
             "link": "https://youtu.be/IryQTwluVx4",
+            "percent": 100,
+            "hz": 120
+        },
+        
+      {
+            "user": "Zzoey",
+            "link": "https://youtu.be/7np_ca18x6Y",
             "percent": 100,
             "hz": 5758459
         }
