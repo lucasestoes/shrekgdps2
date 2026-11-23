@@ -10,5 +10,11 @@
     "difficulty": "Extreme Demon",
     "pplacement": "28",
     "records": [
+      {
+            "user": "nikole",
+            "link": "https://www.youtube.com/watch?v=KTKMXOd9_q8&pp=0gcJCRAIAYcqIYzv",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
