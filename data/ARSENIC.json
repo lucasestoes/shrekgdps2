@@ -10,12 +10,18 @@
     "difficulty": "Hard Demon",
     "pplacement": "11",
     "records": [
-      
       {
             "user": "nikole",
-            "link": "https://youtu.be/-0z5lsfJLxE?si=wb7Uu6bVkmXu7pcJ",
+            "link": "https://www.youtube.com/watch?v=-0z5lsfJLxE",
             "percent": 100,
             "hz": 120
+        },
+        
+      {
+            "user": "Zzoey",
+            "link": "https://youtu.be/7np_ca18x6Y",
+            "percent": 100,
+            "hz": 5758459
         }
     ]
 }
