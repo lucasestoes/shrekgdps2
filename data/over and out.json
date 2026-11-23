@@ -10,5 +10,11 @@
     "difficulty": "Insane Demon",
     "pplacement": "58",
     "records": [
+      {
+            "user": "nikole",
+            "link": "https://youtu.be/Fcg9NdKhuzY",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
