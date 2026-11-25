@@ -149,7 +149,7 @@ export default {
         errors: [],
         roleIconMap,
         store,
-        toggledShowcase: false,
+        toggledShowcase: true,
     }),
     computed: {
         level() {
