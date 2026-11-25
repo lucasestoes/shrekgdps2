@@ -109,7 +109,7 @@ export default {
                     <p>
                         Achieved the record without using hacks (however, any FPS is allowed)
                     </p>
-                        <p>A list of allowed hacks/mods can be found here: <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit?gid=1745390460#gid=1745390460"" target="">Spreadsheet</a></p>
+                        <p class="type-label-md">A list of allowed hacks/mods can be found here: <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit?gid=1745390460#gid=1745390460"" target=""><u>Spreadsheet</u></a></p>
                     <p>
                         Clicks are required for levels in the top 100
                     </p>
