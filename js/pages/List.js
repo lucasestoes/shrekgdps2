@@ -162,8 +162,8 @@ export default {
 
             return embed(
                 this.toggledShowcase
-                    ? this.level.showcase
-                    : this.level.verification
+                    ? this.level.verification
+                    : this.level.showcase
             );
         },
     },
