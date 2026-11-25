@@ -149,7 +149,7 @@ export default {
         errors: [],
         roleIconMap,
         store,
-        toggledShowcase: true,
+        toggledShowcase: false,
     }),
     computed: {
         level() {
@@ -162,8 +162,8 @@ export default {
 
             return embed(
                 this.toggledShowcase
-                    ? this.level.verification
-                    : this.level.showcase
+                    ? this.level.showcase
+                    : this.level.verification
             );
         },
     },
