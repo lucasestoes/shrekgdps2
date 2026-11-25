@@ -84,7 +84,7 @@ export default {
                     </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
-                    <p>NIKO SAID IHBP</p>
+                    <p>THE LIST MODS ARE SMART</p>
                 </div>
             </div>
             <div class="meta-container">
@@ -110,25 +110,28 @@ export default {
                         Achieved the record without using hacks (however, any FPS is allowed)
                     </p>
                     <p>
+                        Clicks are required for levels in the top 100
+                    </p>
+                    <p>
                         Achieved the record on the level that is listed on the site - please check the level ID before you submit a record
                     </p>
                     <p>
-                      The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt. Everyplay records are exempt from this
+                      The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.
                       </p>
                       <p>
                       The recording must also show the player hit the endwall, and display end stats, or the completion will be invalidated.
                     </p>
                     <p>
-                        Do not use secret routes or bug routes
+                        Short skips are allowed, but not use secret ways or skips that significantly alter the level's gameplay.
                     </p>
                     <p>
-                        Do not use easy modes, only a record of the unmodified level qualifies
+                        Do not use easy modes, only a record of the unmodified level qualifies unless you are fixing a bug that is approved by a List Moderator.
                     </p>
                     <p>
                     Reuploaded levels that are top 10 cannot be placed. However once a reuploaded level is theorized to be not top 10, then it can be placed. This is effective as of June 2nd 2025.
                     </p>
                     <p>
-                    Levels that have a verifier outside of the server at the time of uploading cannot be placed. 
+                    Records achieved on 2.1 are not allowed. Only records on 2.2 will be accepted.
                     </p>
                 </div>
             </div>
