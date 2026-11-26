@@ -210,7 +210,8 @@ export default {
                 "Failed to load list. Retry in a few minutes or notify list staff.",
             ];
         } else {
-            this.errors.push(...this.list
+            this.errors.push(
+...this.list
 .filter(([, err]) => err)
 .map(([, err]) => {
 return Failed to load level. (${err}.json);
