@@ -26,15 +26,15 @@ export default {
                     <input type="text" v-model="searchQuery" placeholder="Search levels..." />
                 </div>
                 <table class="list" v-if="filteredList.length > 0">
-                    <tr v-for="({ item: [level, err], originalIndex }, i) in filteredList" :key="originalIndex">
+                    <tr v-for="(entry, i) in filteredList" :key="entry.originalIndex">
                         <td class="rank"> 
-                            <p v-if="originalIndex + 1 <= 10" class="type-label-lg top10">#{{ originalIndex + 1 }}</p>
-                            <p v-else-if="originalIndex + 1 <= 100" class="type-label-lg">#{{ originalIndex + 1 }}</p>
-                            <p v-else class="extended">#{{ originalIndex + 1 }}</p>
+                            <p v-if="entry.originalIndex + 1 <= 10" class="type-label-lg top10">#{{ entry.originalIndex + 1 }}</p>
+                            <p v-else-if="entry.originalIndex + 1 <= 100" class="type-label-lg">#{{ entry.originalIndex + 1 }}</p>
+                            <p v-else class="extended">#{{ entry.originalIndex + 1 }}</p>
                         </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
+                        <td class="level" :class="{ 'active': selected == i, 'error': !entry.level }">
                             <button @click="selected = i">
-                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
+                                <span class="type-label-lg">{{ entry.level?.name || \`Error (\${entry.err}.json)\` }}</span>
                             </button>
                         </td>
                     </tr>
@@ -63,11 +63,11 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">Difficulty:</div>
-                            <p>{{ level.difficulty}}</p>
+                            <p>{{ level.difficulty }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Peak Placement</div>
-                            <p>{{ level.pplacement}}</p>
+                            <p>{{ level.pplacement }}</p>
                         </li>
                     </ul>
                     <h2>Records</h2>
@@ -98,7 +98,7 @@ export default {
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
                     <div class="og">
-                        <p class="type-label-md">Original List by <a href="https://sites.google.com/view/tak-land/home" target="_blank">TAK.com</a></p>
+                        <p class="type-label-md">Original List by <a href="https://google.com" target="_blank">TAK.com</a></p>
                     </div>
                     <template v-if="editors">
                         <h3>List Editors</h3>
@@ -113,7 +113,7 @@ export default {
                     <h3>Submission Requirements</h3>
     
                     <p>
-                       A list of allowed hacks/mods can be found here: <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit?gid=1745390460#gid=1745390460" target="_blank"><u>Spreadsheet</u></a>
+                       A list of allowed hacks/mods can be found here: <a href="https://google.com" target="_blank"><u>Spreadsheet</u></a>
                     </p>
                     <p>
                         Achieved the record without using hacks (however, any FPS is allowed)
@@ -165,17 +165,18 @@ export default {
     computed: {
         filteredList() {
             const indexed = (this.list || []).map((item, originalIndex) => ({
-                item,
+                level: item[0],
+                err: item[1],
                 originalIndex,
             }));
             if (!this.searchQuery) return indexed;
             const q = this.searchQuery.toLowerCase();
-            return indexed.filter(({ item: [lvl] }) => {
-                if (!lvl) return false;
+            return indexed.filter((entry) => {
+                if (!entry.level) return false;
                 return (
-                    (lvl.name && lvl.name.toLowerCase().includes(q)) ||
-                    (lvl.author && lvl.author.toLowerCase().includes(q)) ||
-                    (lvl.verifier && lvl.verifier.toLowerCase().includes(q))
+                    (entry.level.name && entry.level.name.toLowerCase().includes(q)) ||
+                    (entry.level.author && entry.level.author.toLowerCase().includes(q)) ||
+                    (entry.level.verifier && entry.level.verifier.toLowerCase().includes(q))
                 );
             });
         },
@@ -186,9 +187,10 @@ export default {
             return this.selectedEntry ? this.selectedEntry.originalIndex + 1 : 1;
         },
         level() {
-            return this.selectedEntry ? this.selectedEntry.item[0] : null;
+            return this.selectedEntry ? this.selectedEntry.level : null;
         },
         video() {
+            if (!this.level) return "";
             if (!this.level.showcase) {
                 return embed(this.level.verification);
             }
@@ -208,7 +210,3 @@ export default {
         // Error handling
         if (!this.list) {
             this.errors = [
-                "Failed to load list. Retry in a few minutes or notify list staff.",
-            ];
-        } else {
-            this.errors.push(
