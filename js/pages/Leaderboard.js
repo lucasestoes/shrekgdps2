@@ -71,10 +71,11 @@ export default {
         const res = await fetch(path);
         if (res.ok) {
           const raw = await res.json();
+          // Lowercase usernames for easy matching, keep exact filename casing for SVGs
           this.nationalities = Object.fromEntries(
             Object.entries(raw).map(([k, v]) => [
               k.trim().toLowerCase(),
-              v.trim().toLowerCase(),
+              v.trim(),
             ])
           );
           break;
@@ -91,7 +92,7 @@ export default {
     getFlagUrl(username) {
       if (!username) return null;
       const code = this.nationalities[username.trim().toLowerCase()];
-      return code ? `https://flagcdn.com{code}.png` : null;
+      return code ? `./assets/${code}.svg` : null;
     },
   },
   template: `
@@ -126,7 +127,9 @@ export default {
                     v-if="getFlagUrl(entry.user)"
                     :src="getFlagUrl(entry.user)"
                     :alt="entry.user"
-                    style="vertical-align: middle; margin-right: 6px; border-radius: 2px;"
+                    width="24"
+                    height="18"
+                    style="vertical-align: middle; margin-right: 6px; border-radius: 2px; object-fit: cover;"
                   />
                   <span class="type-label-lg">{{ entry.user }}</span>
                 </button>
@@ -146,7 +149,9 @@ export default {
                 v-if="getFlagUrl(selectedEntry.user)"
                 :src="getFlagUrl(selectedEntry.user)"
                 :alt="selectedEntry.user"
-                style="vertical-align: middle; margin: 0 6px; border-radius: 2px;"
+                width="28"
+                height="21"
+                style="vertical-align: middle; margin: 0 6px; border-radius: 2px; object-fit: cover;"
               />
               {{ selectedEntry.user }}
             </h1>
