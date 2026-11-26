@@ -70,7 +70,6 @@ export default {
             v.trim(),
           ])
         );
-        console.log("Loaded nationalities:", this.nationalities);
       } else {
         console.error(`Failed to load _nationalities.json (${res.status}) at:`, dataUrl);
       }
@@ -120,13 +119,6 @@ export default {
               </td>
               <td class="user" :class="{ 'active': selected === i }">
                 <button @click="selected = i">
-                  <img
-                    v-if="getFlagUrl(entry.user)"
-                    :src="getFlagUrl(entry.user)"
-                    :alt="entry.user"
-                    @error="onFlagError($event, entry.user)"
-                    style="display: inline-block; width: 24px; min-width: 24px; height: 18px; vertical-align: middle; margin-right: 6px; border-radius: 2px; object-fit: cover;"
-                  />
                   <span class="type-label-lg">{{ entry.user }}</span>
                 </button>
               </td>
@@ -146,7 +138,7 @@ export default {
                 :src="getFlagUrl(selectedEntry.user)"
                 :alt="selectedEntry.user"
                 @error="onFlagError($event, selectedEntry.user)"
-                style="display: inline-block; width: 28px; min-width: 28px; height: 21px; vertical-align: middle; margin: 0 6px; border-radius: 2px; object-fit: cover;"
+                style="display: inline-block; width: 40px; min-width: 40px; height: 30px; vertical-align: middle; margin: 0 8px; border-radius: 3px; object-fit: cover;"
               />
               {{ selectedEntry.user }}
             </h1>
