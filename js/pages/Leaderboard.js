@@ -33,6 +33,20 @@ export default {
       );
       return idx >= 0 ? idx + 1 : this.selected + 1;
     },
+    selectedHardest() {
+      if (!this.selectedEntry) return null;
+
+      // Combine verified and completed levels
+      const beaten = [
+        ...(this.selectedEntry.verified || []),
+        ...(this.selectedEntry.completed || []),
+      ];
+
+      if (beaten.length === 0) return null;
+
+      // Sort by rank ascending (#1 is hardest) and return the top one
+      return beaten.sort((a, b) => a.rank - b.rank)[0];
+    },
   },
   watch: {
     // Whenever the search query changes, reset the selected index.
@@ -45,30 +59,6 @@ export default {
     this.leaderboard = leaderboard;
     this.err = err;
     this.loading = false;
-      async function getPlayerHardest(playerName) {
-  const listRes = await fetch('./data/_list.json');
-  const levelSlugs = await listRes.json();
-
-  for (let i = 0; i < levelSlugs.length; i++) {
-    const levelRes = await fetch(`./data/${levelSlugs[i]}.json`);
-    const levelData = await levelRes.json();
-
-    const hasBeaten = levelData.records.some(
-      (r) => r.user.toLowerCase() === playerName.toLowerCase() && r.percent === 100
-    );
-
-    if (hasBeaten) {
-      return {
-        rank: i + 1,
-        name: levelData.name,
-        slug: levelSlugs[i]
-      };
-    }
-  }
-
-  return null; // No completed levels found
-},
-
   },
   methods: {
     localize,
@@ -115,6 +105,9 @@ export default {
           <div class="player">
             <h1>#{{ selectedRank }} {{ selectedEntry.user }}</h1>
             <h3>{{ localize(selectedEntry.total) }}</h3>
+            <h3 v-if="selectedHardest">
+              Hardest: #{{ selectedHardest.rank }} {{ selectedHardest.level }}
+            </h3>
             <h2 v-if="selectedEntry.verified && selectedEntry.verified.length > 0">
               Verified ({{ selectedEntry.verified.length }})
             </h2>
