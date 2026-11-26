@@ -93,7 +93,7 @@ export default {
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
                     <div class="og">
-                        <p class="type-label-md">Original List by <a href="TAK" target="_blank">TAK.com</a></p>
+                        <p class="type-label-md">Original List by <a href="https://sites.google.com/view/tak-land/home" target="_blank">TAK.com</a></p>
                     </div>
                     <template v-if="editors">
                         <h3>List Editors</h3>
