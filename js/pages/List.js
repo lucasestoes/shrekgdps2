@@ -22,8 +22,13 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-                <div class="search-bar">
-                    <input type="text" v-model="searchQuery" placeholder="Search levels..." />
+                <div class="search-bar" style="margin-bottom: 1.5rem; width: 100%; padding-right: 1rem; box-sizing: border-box;">
+                    <input
+                        type="text"
+                        v-model="searchQuery"
+                        placeholder="Search levels..."
+                        style="width: 100%; box-sizing: border-box;"
+                    />
                 </div>
                 <table class="list" v-if="filteredList.length > 0">
                     <tr v-for="([level, err], i) in filteredList" :key="i">
@@ -171,7 +176,7 @@ export default {
             );
         },
         selectedEntry() {
-            return this.filteredList[this.selected] || null;
+            return this.filteredList.at(this.selected) || null;
         },
         selectedRank() {
             if (!this.selectedEntry) return 1;
@@ -179,7 +184,7 @@ export default {
             return idx >= 0 ? idx + 1 : this.selected + 1;
         },
         level() {
-            return this.selectedEntry ? this.selectedEntry[0] : null;
+            return this.selectedEntry ? this.selectedEntry.at(0) : null;
         },
         video() {
             if (!this.level) return "";
@@ -205,14 +210,14 @@ export default {
                 "Failed to load list. Retry in a few minutes or notify list staff.",
             ];
         } else {
-            this.errors.push(
-                ...this.list
-                    .filter(([_, err]) => err)
-                    .map(([_, err]) => {
-                        return `Failed to load level. (${err}.json)`;
-                    })
-            );
-            if (!this.editors) { this.errors.push("Failed to load list editors.");
+            this.errors.push(...this.list
+.filter(([, err]) => err)
+.map(([, err]) => {
+return Failed to load level. (${err}.json);
+})
+);
+if (!this.editors) {
+this.errors.push("Failed to load list editors.");
 }
 }
 this.loading = false;
