@@ -49,9 +49,16 @@ export async function fetchEditors() {
 export async function fetchPacks() {
     try {
         const packsResult = await fetch(`${dir}/_packs.json`);
-        if (!packsResult.ok) return [];
-        return await packsResult.json();
-    } catch {
+        if (!packsResult.ok) {
+            console.error(`Failed to load _packs.json (${packsResult.status}) at ${dir}/_packs.json`);
+            return [];
+        }
+        const data = await packsResult.json();
+        const packs = Array.isArray(data) ? data : (data.packs || []);
+        console.log('Loaded packs:', packs);
+        return packs;
+    } catch (e) {
+        console.error('Error loading/parsing _packs.json:', e);
         return [];
     }
 }
@@ -141,16 +148,21 @@ export async function fetchLeaderboard() {
             const packLevels = pack.levels || [];
             if (packLevels.length === 0) continue;
 
-            const hasBeatenAll = packLevels.every((lvl) =>
-                beatenSet.has(String(lvl).trim().toLowerCase()),
-            );
+            const hasBeatenAll = packLevels.every((lvl) => {
+                const key = typeof lvl === 'string'
+                    ? lvl
+                    : (lvl.path || lvl.name || lvl.level || '');
+                return beatenSet.has(String(key).trim().toLowerCase());
+            });
 
             if (hasBeatenAll) {
-                const packPoints = Number(pack.score ?? pack.points ?? 0);
+                const packPoints = Number(
+                    pack.score ?? pack.points ?? pack.value ?? pack.reward ?? 0,
+                );
                 packTotal += packPoints;
                 completedPacks.push({
                     name: pack.name,
-                    colour: pack.colour || '#ffffff',
+                    colour: pack.colour || pack.color || '#ffffff',
                     score: packPoints,
                 });
             }
