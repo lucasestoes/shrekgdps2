@@ -49,16 +49,10 @@ export async function fetchEditors() {
 export async function fetchPacks() {
     try {
         const packsResult = await fetch(`${dir}/_packs.json`);
-        if (!packsResult.ok) {
-            console.error(`Failed to load _packs.json (${packsResult.status}) at ${dir}/_packs.json`);
-            return [];
-        }
+        if (!packsResult.ok) return [];
         const data = await packsResult.json();
-        const packs = Array.isArray(data) ? data : (data.packs || []);
-        console.log('Loaded packs:', packs);
-        return packs;
-    } catch (e) {
-        console.error('Error loading/parsing _packs.json:', e);
+        return Array.isArray(data) ? data : (data.packs || []);
+    } catch {
         return [];
     }
 }
@@ -87,6 +81,7 @@ export async function fetchLeaderboard() {
         const { verified } = scoreMap[verifier];
         verified.push({
             rank: rank + 1,
+            id: level.id,
             level: level.name,
             path: level.path,
             score: score(rank + 1, 100, level.percentToQualify),
@@ -108,6 +103,7 @@ export async function fetchLeaderboard() {
             if (record.percent === 100) {
                 completed.push({
                     rank: rank + 1,
+                    id: level.id,
                     level: level.name,
                     path: level.path,
                     score: score(rank + 1, 100, level.percentToQualify),
@@ -118,6 +114,7 @@ export async function fetchLeaderboard() {
 
             progressed.push({
                 rank: rank + 1,
+                id: level.id,
                 level: level.name,
                 path: level.path,
                 percent: record.percent,
@@ -131,10 +128,11 @@ export async function fetchLeaderboard() {
     const res = Object.entries(scoreMap).map(([user, scores]) => {
         const { verified, completed, progressed } = scores;
 
-        // Collect all 100% beaten level slugs and names (case-insensitive)
+        // Collect all 100% beaten level IDs, slugs, and names
         const beatenSet = new Set(
             [...verified, ...completed]
                 .flatMap((l) => [
+                    l.id !== undefined && l.id !== null ? String(l.id).trim() : null,
                     l.path?.trim().toLowerCase(),
                     l.level?.trim().toLowerCase(),
                 ])
@@ -149,20 +147,18 @@ export async function fetchLeaderboard() {
             if (packLevels.length === 0) continue;
 
             const hasBeatenAll = packLevels.every((lvl) => {
-                const key = typeof lvl === 'string'
-                    ? lvl
-                    : (lvl.path || lvl.name || lvl.level || '');
+                const key = typeof lvl === 'object' && lvl !== null
+                    ? (lvl.id ?? lvl.path ?? lvl.name ?? '')
+                    : lvl;
                 return beatenSet.has(String(key).trim().toLowerCase());
             });
 
             if (hasBeatenAll) {
-                const packPoints = Number(
-                    pack.score ?? pack.points ?? pack.value ?? pack.reward ?? 0,
-                );
+                const packPoints = Number(pack.score ?? pack.points ?? 0);
                 packTotal += packPoints;
                 completedPacks.push({
                     name: pack.name,
-                    colour: pack.colour || pack.color || '#ffffff',
+                    colour: pack.color || pack.colour || '#ffffff',
                     score: packPoints,
                 });
             }
