@@ -117,7 +117,7 @@ export default {
               <p>{{ selectedLevel.version || 'Any' }}</p>
             </li>
             <li>
-              <div class="type-title-sm">POINTS</div>
+              <div class="type-title-sm">ALTERNATING</div>
               <p>{{ selectedLevel.alternating || 'No' }}</p>
             </li>
           </ul>
