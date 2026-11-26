@@ -116,7 +116,6 @@ export default {
                         </ol>
                     </template>
                     <h3>Submission Requirements</h3>
-    
                     <p>
                        A list of allowed hacks/mods can be found here: <a href="https://google.com" target="_blank"><u>Spreadsheet</u></a>
                     </p>
@@ -200,18 +199,16 @@ export default {
         },
     },
     async mounted() {
-        // Hide loading spinner
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
-        // Error handling
         if (!this.list) {
             this.errors = [
                 "Failed to load list. Retry in a few minutes or notify list staff.",
             ];
         } else {
             this.errors.push(
-...this.list
+                ...this.list
 .filter(([, err]) => err)
 .map(([, err]) => {
 return Failed to load level. (${err}.json);
