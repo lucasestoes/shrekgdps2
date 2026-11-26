@@ -106,7 +106,10 @@ export default {
             <h1>#{{ selectedRank }} {{ selectedEntry.user }}</h1>
             <h3>{{ localize(selectedEntry.total) }}</h3>
             <h3 v-if="selectedHardest">
-              Hardest Demon: #{{ selectedHardest.rank }} {{ selectedHardest.level }}
+              Hardest Demon: <a target="_blank" :href="selectedHardest.link">{{ selectedHardest.level }}</a>
+            </h3>
+            <h3 v-else>
+              Hardest Demon: None
             </h3>
             <h2 v-if="selectedEntry.verified && selectedEntry.verified.length > 0">
               Verified ({{ selectedEntry.verified.length }})
