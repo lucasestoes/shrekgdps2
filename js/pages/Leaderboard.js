@@ -7,6 +7,7 @@ export default {
   data: () => ({
     leaderboard: [],
     nationalities: {},
+    assetBase: "./assets",
     loading: true,
     selected: 0,
     err: [],
@@ -60,28 +61,24 @@ export default {
     this.leaderboard = leaderboard;
     this.err = err;
 
-    const paths = [
-      "./data/_nationalities.json",
-      "../data/_nationalities.json",
-      "/data/_nationalities.json",
-    ];
-
-    for (const path of paths) {
+    // Resolve the correct base path for both /data and /assets
+    const baseCandidates = [".", ".."];
+    for (const base of baseCandidates) {
       try {
-        const res = await fetch(path);
+        const res = await fetch(`${base}/data/_nationalities.json`);
         if (res.ok) {
           const raw = await res.json();
-          // Lowercase usernames for easy matching, keep exact filename casing for SVGs
           this.nationalities = Object.fromEntries(
             Object.entries(raw).map(([k, v]) => [
               k.trim().toLowerCase(),
               v.trim(),
             ])
           );
+          this.assetBase = `${base}/assets`;
           break;
         }
       } catch (e) {
-        console.warn(`Could not load ${path}:`, e);
+        console.warn(`Could not load ${base}/data/_nationalities.json:`, e);
       }
     }
 
@@ -92,7 +89,10 @@ export default {
     getFlagUrl(username) {
       if (!username) return null;
       const code = this.nationalities[username.trim().toLowerCase()];
-      return code ? `./assets/${code}.svg` : null;
+      return code ? `${this.assetBase}/${code}.svg` : null;
+    },
+    hideBrokenFlag(event) {
+      event.target.style.display = "none";
     },
   },
   template: `
@@ -127,6 +127,7 @@ export default {
                     v-if="getFlagUrl(entry.user)"
                     :src="getFlagUrl(entry.user)"
                     :alt="entry.user"
+                    @error="hideBrokenFlag"
                     width="24"
                     height="18"
                     style="vertical-align: middle; margin-right: 6px; border-radius: 2px; object-fit: cover;"
@@ -149,6 +150,7 @@ export default {
                 v-if="getFlagUrl(selectedEntry.user)"
                 :src="getFlagUrl(selectedEntry.user)"
                 :alt="selectedEntry.user"
+                @error="hideBrokenFlag"
                 width="28"
                 height="21"
                 style="vertical-align: middle; margin: 0 6px; border-radius: 2px; object-fit: cover;"
