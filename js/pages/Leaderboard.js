@@ -132,15 +132,14 @@ export default {
         <div class="player-container" v-if="selectedEntry">
           <div class="player">
             <h1>
-              #{{ selectedRank }}
+              #{{ selectedRank }} {{ selectedEntry.user }}
               <img
                 v-if="getFlagUrl(selectedEntry.user)"
                 :src="getFlagUrl(selectedEntry.user)"
                 :alt="selectedEntry.user"
                 @error="onFlagError($event, selectedEntry.user)"
-                style="display: inline-block; width: 40px; min-width: 40px; height: 30px; vertical-align: middle; margin: 0 8px; border-radius: 3px; object-fit: cover;"
+                style="display: inline-block; width: 40px; min-width: 40px; height: 30px; vertical-align: middle; margin-left: 10px; border-radius: 3px; object-fit: cover;"
               />
-              {{ selectedEntry.user }}
             </h1>
             <h3>{{ localize(selectedEntry.total) }}</h3>
             <h3 v-if="selectedHardest">
