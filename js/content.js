@@ -46,8 +46,18 @@ export async function fetchEditors() {
     }
 }
 
+export async function fetchPacks() {
+    try {
+        const packsResult = await fetch(`${dir}/_packs.json`);
+        if (!packsResult.ok) return [];
+        return await packsResult.json();
+    } catch {
+        return [];
+    }
+}
+
 export async function fetchLeaderboard() {
-    const list = await fetchList();
+    const [list, packs] = await Promise.all([fetchList(), fetchPacks()]);
 
     const scoreMap = {};
     const errs = [];
@@ -65,11 +75,13 @@ export async function fetchLeaderboard() {
             verified: [],
             completed: [],
             progressed: [],
+            packs: [],
         };
         const { verified } = scoreMap[verifier];
         verified.push({
             rank: rank + 1,
             level: level.name,
+            path: level.path,
             score: score(rank + 1, 100, level.percentToQualify),
             link: level.verification,
         });
@@ -83,12 +95,14 @@ export async function fetchLeaderboard() {
                 verified: [],
                 completed: [],
                 progressed: [],
+                packs: [],
             };
             const { completed, progressed } = scoreMap[user];
             if (record.percent === 100) {
                 completed.push({
                     rank: rank + 1,
                     level: level.name,
+                    path: level.path,
                     score: score(rank + 1, 100, level.percentToQualify),
                     link: record.link,
                 });
@@ -98,6 +112,7 @@ export async function fetchLeaderboard() {
             progressed.push({
                 rank: rank + 1,
                 level: level.name,
+                path: level.path,
                 percent: record.percent,
                 score: score(rank + 1, record.percent, level.percentToQualify),
                 link: record.link,
@@ -108,14 +123,48 @@ export async function fetchLeaderboard() {
     // Wrap in extra Object containing the user and total score
     const res = Object.entries(scoreMap).map(([user, scores]) => {
         const { verified, completed, progressed } = scores;
-        const total = [verified, completed, progressed]
+
+        // Collect all 100% beaten level slugs and names (case-insensitive)
+        const beatenSet = new Set(
+            [...verified, ...completed]
+                .flatMap((l) => [
+                    l.path?.trim().toLowerCase(),
+                    l.level?.trim().toLowerCase(),
+                ])
+                .filter(Boolean),
+        );
+
+        const completedPacks = [];
+        let packTotal = 0;
+
+        for (const pack of packs || []) {
+            const packLevels = pack.levels || [];
+            if (packLevels.length === 0) continue;
+
+            const hasBeatenAll = packLevels.every((lvl) =>
+                beatenSet.has(String(lvl).trim().toLowerCase()),
+            );
+
+            if (hasBeatenAll) {
+                const packPoints = Number(pack.score ?? pack.points ?? 0);
+                packTotal += packPoints;
+                completedPacks.push({
+                    name: pack.name,
+                    colour: pack.colour || '#ffffff',
+                    score: packPoints,
+                });
+            }
+        }
+
+        const levelTotal = [verified, completed, progressed]
             .flat()
             .reduce((prev, cur) => prev + cur.score, 0);
 
         return {
             user,
-            total: round(total),
+            total: round(levelTotal + packTotal),
             ...scores,
+            packs: completedPacks,
         };
     });
 
