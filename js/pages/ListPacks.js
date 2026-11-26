@@ -117,8 +117,8 @@ export default {
               <p>{{ selectedLevel.version || 'Any' }}</p>
             </li>
             <li>
-              <div class="type-title-sm">ALTERNATING</div>
-              <p>{{ selectedLevel.alternating || 'No' }}</p>
+              <div class="type-title-sm">PACK POINTS</div>
+              <p>{{ selectedPack.score ?? selectedPack.points ?? 0 }}</p>
             </li>
           </ul>
         </div>
