@@ -45,6 +45,30 @@ export default {
     this.leaderboard = leaderboard;
     this.err = err;
     this.loading = false;
+      async function getPlayerHardest(playerName) {
+  const listRes = await fetch('./data/_list.json');
+  const levelSlugs = await listRes.json();
+
+  for (let i = 0; i < levelSlugs.length; i++) {
+    const levelRes = await fetch(`./data/${levelSlugs[i]}.json`);
+    const levelData = await levelRes.json();
+
+    const hasBeaten = levelData.records.some(
+      (r) => r.user.toLowerCase() === playerName.toLowerCase() && r.percent === 100
+    );
+
+    if (hasBeaten) {
+      return {
+        rank: i + 1,
+        name: levelData.name,
+        slug: levelSlugs[i]
+      };
+    }
+  }
+
+  return null; // No completed levels found
+},
+
   },
   methods: {
     localize,
