@@ -7,7 +7,7 @@ export default {
   data: () => ({
     leaderboard: [],
     nationalities: {},
-    assetBase: "./assets",
+    assetsUrl: new URL("../../assets/", import.meta.url).href,
     loading: true,
     selected: 0,
     err: [],
@@ -16,20 +16,19 @@ export default {
   computed: {
     filteredLeaderboard() {
       if (!this.searchQuery) return this.leaderboard;
-      return this.leaderboard.filter((entry) =>
-        entry.user &&
-        entry.user.toLowerCase().includes(this.searchQuery.toLowerCase())
+      return this.leaderboard.filter(
+        (entry) =>
+          entry.user &&
+          entry.user.toLowerCase().includes(this.searchQuery.toLowerCase())
       );
     },
     selectedEntry() {
-      // Only return a selected item if it exists in the filtered leaderboard.
       return this.filteredLeaderboard[this.selected] || null;
     },
     selectedRank() {
       if (!this.selectedEntry) {
         return "-";
       }
-      // Find original rank in the full leaderboard
       let idx = this.leaderboard.findIndex(
         (e) => e.user === this.selectedEntry.user
       );
@@ -38,7 +37,6 @@ export default {
     selectedHardest() {
       if (!this.selectedEntry) return null;
 
-      // Combine verified and completed levels
       const beaten = [
         ...(this.selectedEntry.verified || []),
         ...(this.selectedEntry.completed || []),
@@ -46,12 +44,10 @@ export default {
 
       if (beaten.length === 0) return null;
 
-      // Sort by rank ascending (#1 is hardest) and return the top one
       return beaten.sort((a, b) => a.rank - b.rank)[0];
     },
   },
   watch: {
-    // Whenever the search query changes, reset the selected index.
     searchQuery() {
       this.selected = 0;
     },
@@ -61,25 +57,25 @@ export default {
     this.leaderboard = leaderboard;
     this.err = err;
 
-    // Resolve the correct base path for both /data and /assets
-    const baseCandidates = [".", ".."];
-    for (const base of baseCandidates) {
-      try {
-        const res = await fetch(`${base}/data/_nationalities.json`);
-        if (res.ok) {
-          const raw = await res.json();
-          this.nationalities = Object.fromEntries(
-            Object.entries(raw).map(([k, v]) => [
-              k.trim().toLowerCase(),
-              v.trim(),
-            ])
-          );
-          this.assetBase = `${base}/assets`;
-          break;
-        }
-      } catch (e) {
-        console.warn(`Could not load ${base}/data/_nationalities.json:`, e);
+    // Resolve /data/_nationalities.json relative to js/pages/Leaderboard.js
+    const dataUrl = new URL("../../data/_nationalities.json", import.meta.url).href;
+
+    try {
+      const res = await fetch(dataUrl);
+      if (res.ok) {
+        const raw = await res.json();
+        this.nationalities = Object.fromEntries(
+          Object.entries(raw).map(([k, v]) => [
+            k.trim().toLowerCase(),
+            v.trim(),
+          ])
+        );
+        console.log("Loaded nationalities:", this.nationalities);
+      } else {
+        console.error(`Failed to load _nationalities.json (${res.status}) at:`, dataUrl);
       }
+    } catch (e) {
+      console.error("Error parsing _nationalities.json:", e);
     }
 
     this.loading = false;
@@ -89,9 +85,10 @@ export default {
     getFlagUrl(username) {
       if (!username) return null;
       const code = this.nationalities[username.trim().toLowerCase()];
-      return code ? `${this.assetBase}/${code}.svg` : null;
+      return code ? `${this.assetsUrl}${code}.svg` : null;
     },
-    hideBrokenFlag(event) {
+    onFlagError(event, username) {
+      console.error(`Flag image failed to load for ${username}:`, event.target.src);
       event.target.style.display = "none";
     },
   },
@@ -127,10 +124,8 @@ export default {
                     v-if="getFlagUrl(entry.user)"
                     :src="getFlagUrl(entry.user)"
                     :alt="entry.user"
-                    @error="hideBrokenFlag"
-                    width="24"
-                    height="18"
-                    style="vertical-align: middle; margin-right: 6px; border-radius: 2px; object-fit: cover;"
+                    @error="onFlagError($event, entry.user)"
+                    style="display: inline-block; width: 24px; min-width: 24px; height: 18px; vertical-align: middle; margin-right: 6px; border-radius: 2px; object-fit: cover;"
                   />
                   <span class="type-label-lg">{{ entry.user }}</span>
                 </button>
@@ -150,10 +145,8 @@ export default {
                 v-if="getFlagUrl(selectedEntry.user)"
                 :src="getFlagUrl(selectedEntry.user)"
                 :alt="selectedEntry.user"
-                @error="hideBrokenFlag"
-                width="28"
-                height="21"
-                style="vertical-align: middle; margin: 0 6px; border-radius: 2px; object-fit: cover;"
+                @error="onFlagError($event, selectedEntry.user)"
+                style="display: inline-block; width: 28px; min-width: 28px; height: 21px; vertical-align: middle; margin: 0 6px; border-radius: 2px; object-fit: cover;"
               />
               {{ selectedEntry.user }}
             </h1>
