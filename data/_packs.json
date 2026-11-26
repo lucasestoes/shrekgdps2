@@ -2,6 +2,7 @@
   {
     "name": "Josh Pack",
     "color": "#05b3f7",
+      "score": 50,
     "levels": [
       100000,
       100001,
@@ -12,6 +13,7 @@
   {
     "name": "Josh Spinoff Pack",
     "color": "#167aa6",
+      "score": 75,
     "levels": [
       83,
       100004,
@@ -21,6 +23,7 @@
   {
     "name": "Nine Circles Pack",
     "color": "#f50f1e",
+      "score": 250,
     "levels": [
       100007,
       100008,
@@ -30,6 +33,7 @@
   {
     "name": "Shrek Pack",
     "color": "#0c6b18",
+      "score": 100,
     "levels": [
       100010,
       100011,
@@ -39,6 +43,7 @@
   {
     "name": "Dylpnaner Pack",
     "color": "#6a6b0c",
+      "score": 200,
     "levels": [
       100013,
       100014,
