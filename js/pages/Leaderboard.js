@@ -148,6 +148,30 @@ export default {
             <h3 v-else>
               Hardest Demon: None
             </h3>
+            <h2 v-if="selectedEntry.packs && selectedEntry.packs.length > 0">
+              Completed Packs ({{ selectedEntry.packs.length }})
+            </h2>
+            <table class="table" v-if="selectedEntry.packs && selectedEntry.packs.length > 0">
+              <tr v-for="pack in selectedEntry.packs" :key="pack.name">
+                <td class="rank">
+                  <span
+                    :style="{
+                      display: 'inline-block',
+                      width: '12px',
+                      height: '12px',
+                      borderRadius: '50%',
+                      backgroundColor: pack.colour || '#ffffff',
+                    }"
+                  ></span>
+                </td>
+                <td class="level">
+                  <p class="type-label-lg">{{ pack.name }}</p>
+                </td>
+                <td class="score">
+                  <p>+{{ localize(pack.score) }}</p>
+                </td>
+              </tr>
+            </table>
             <h2 v-if="selectedEntry.verified && selectedEntry.verified.length > 0">
               Verified ({{ selectedEntry.verified.length }})
             </h2>
