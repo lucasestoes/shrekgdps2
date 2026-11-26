@@ -60,17 +60,28 @@ export default {
     this.leaderboard = leaderboard;
     this.err = err;
 
-    try {
-      const res = await fetch("./data/_nationalities.json");
-      if (res.ok) {
-        const raw = await res.json();
-        // Store keys in lowercase for case-insensitive matching
-        this.nationalities = Object.fromEntries(
-          Object.entries(raw).map(([k, v]) => [k.toLowerCase(), v.toLowerCase()])
-        );
+    const paths = [
+      "./data/_nationalities.json",
+      "../data/_nationalities.json",
+      "/data/_nationalities.json",
+    ];
+
+    for (const path of paths) {
+      try {
+        const res = await fetch(path);
+        if (res.ok) {
+          const raw = await res.json();
+          this.nationalities = Object.fromEntries(
+            Object.entries(raw).map(([k, v]) => [
+              k.trim().toLowerCase(),
+              v.trim().toLowerCase(),
+            ])
+          );
+          break;
+        }
+      } catch (e) {
+        console.warn(`Could not load ${path}:`, e);
       }
-    } catch (e) {
-      // Ignore if _nationalities.json hasn't been created yet
     }
 
     this.loading = false;
@@ -79,7 +90,7 @@ export default {
     localize,
     getFlagUrl(username) {
       if (!username) return null;
-      const code = this.nationalities[username.toLowerCase()];
+      const code = this.nationalities[username.trim().toLowerCase()];
       return code ? `https://flagcdn.com{code}.png` : null;
     },
   },
