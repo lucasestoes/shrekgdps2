@@ -165,8 +165,8 @@ export default {
     computed: {
         filteredList() {
             const indexed = (this.list || []).map((item, originalIndex) => ({
-                level: item[0],
-                err: item[1],
+                level: item.at(0),
+                err: item.at(1),
                 originalIndex,
             }));
             if (!this.searchQuery) return indexed;
@@ -181,7 +181,7 @@ export default {
             });
         },
         selectedEntry() {
-            return this.filteredList[this.selected] || null;
+            return this.filteredList.at(this.selected) || null;
         },
         selectedOriginalRank() {
             return this.selectedEntry ? this.selectedEntry.originalIndex + 1 : 1;
@@ -209,4 +209,3 @@ export default {
 
         // Error handling
         if (!this.list) {
-            this.errors = [
