@@ -25,21 +25,22 @@ export default {
                 <div class="search-bar">
                     <input type="text" v-model="searchQuery" placeholder="Search levels..." />
                 </div>
-                <table class="list" v-if="filteredList.length > 0">
-                    <tr v-for="(entry, i) in filteredList" :key="entry.originalIndex">
+                <table class="list" v-if="list">
+                    <tr v-for="([level, err], i) in filteredList" :key="i">
                         <td class="rank"> 
-                            <p v-if="entry.originalIndex + 1 <= 10" class="type-label-lg top10">#{{ entry.originalIndex + 1 }}</p>
-                            <p v-else-if="entry.originalIndex + 1 <= 100" class="type-label-lg">#{{ entry.originalIndex + 1 }}</p>
-                            <p v-else class="extended">#{{ entry.originalIndex + 1 }}</p>
+                        <p v-if="getOriginalRank(level, err) <= 10" class="type-label-lg" class="top10">#{{ getOriginalRank(level, err) }}</p>
+                         <p v-else-if="getOriginalRank(level, err) <= 100" class="type-label-lg">#{{ getOriginalRank(level, err) }}</p>
+                         <p v-else-if="getOriginalRank(level, err) <= 150" class="extended">#{{ getOriginalRank(level, err) }}</p>
+                         <p v-else-if="getOriginalRank(level, err) > 150" class="extended">#{{ getOriginalRank(level, err) }}</p>
                         </td>
-                        <td class="level" :class="{ 'active': selected == i, 'error': !entry.level }">
+                        <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
-                                <span class="type-label-lg">{{ entry.level?.name || \`Error (\${entry.err}.json)\` }}</span>
+                                <span class="type-label-lg">{{ level?.name || \`Error (\${err}.json)\` }}</span>
                             </button>
                         </td>
                     </tr>
                 </table>
-                <p v-else class="no-results">
+                <p v-if="filteredList.length === 0" class="no-results">
                     No levels found for "{{ searchQuery }}"
                 </p>
             </div>
@@ -59,20 +60,20 @@ export default {
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points:</div>
-                            <p>{{ score(selectedOriginalRank, 100, level.percentToQualify) }}</p>
+                            <p>{{ score(selectedRank, 100, level.percentToQualify) }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Difficulty:</div>
-                            <p>{{ level.difficulty }}</p>
+                            <p>{{ level.difficulty}}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Peak Placement</div>
-                            <p>{{ level.pplacement }}</p>
+                            <p>{{ level.pplacement}}</p>
                         </li>
                     </ul>
                     <h2>Records</h2>
-                    <p v-if="selectedOriginalRank <= 50"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
-                    <p v-else-if="selectedOriginalRank <= 100"><strong>100%</strong> required (Extended List)</p>
+                    <p v-if="selectedRank <= 50"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
+                    <p v-else-if="selectedRank <= 100"><strong>100%</strong> required (Extended List)</p>
                     <p v-else><strong>100%</strong> required (Legacy List)</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
@@ -84,8 +85,8 @@ export default {
                             </td>
                             <td class="mobile">
                                 <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
-                            </td>
-                        </tr>
+              
+                      
                     </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
@@ -98,7 +99,7 @@ export default {
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
                     <div class="og">
-                        <p class="type-label-md">Original List by <a href="https://google.com" target="_blank">TAK.com</a></p>
+                        <p class="type-label-md">Original List by <a href="https://sites.google.com/view/tak-land/home" target="_blank">TAK.com</a></p>
                     </div>
                     <template v-if="editors">
                         <h3>List Editors</h3>
@@ -113,8 +114,8 @@ export default {
                     <h3>Submission Requirements</h3>
     
                     <p>
-                       A list of allowed hacks/mods can be found here: <a href="https://google.com" target="_blank"><u>Spreadsheet</u></a>
-                    </p>
+                       A list of allowed hacks/mods can be found here: <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit?gid=1745390460#gid=1745390460"" target=""><u>Spreadsheet</u></a>
+                       </p>
                     <p>
                         Achieved the record without using hacks (however, any FPS is allowed)
                     </p>
@@ -126,8 +127,8 @@ export default {
                     </p>
                     <p>
                       The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.
-                    </p>
-                    <p>
+                      </p>
+                      <p>
                       The recording must also show the player hit the endwall, and display end stats, or the completion will be invalidated.
                     </p>
                     <p>
@@ -164,33 +165,24 @@ export default {
     },
     computed: {
         filteredList() {
-            const indexed = (this.list || []).map((item, originalIndex) => ({
-                level: item.at(0),
-                err: item.at(1),
-                originalIndex,
-            }));
-            if (!this.searchQuery) return indexed;
+            if (!this.searchQuery) return this.list;
             const q = this.searchQuery.toLowerCase();
-            return indexed.filter((entry) => {
-                if (!entry.level) return false;
-                return (
-                    (entry.level.name && entry.level.name.toLowerCase().includes(q)) ||
-                    (entry.level.author && entry.level.author.toLowerCase().includes(q)) ||
-                    (entry.level.verifier && entry.level.verifier.toLowerCase().includes(q))
-                );
-            });
+            return this.list.filter(([lvl]) =>
+                lvl && lvl.name && lvl.name.toLowerCase().includes(q)
+            );
         },
         selectedEntry() {
-            return this.filteredList.at(this.selected) || null;
+            return this.filteredList[this.selected] || null;
         },
-        selectedOriginalRank() {
-            return this.selectedEntry ? this.selectedEntry.originalIndex + 1 : 1;
+        selectedRank() {
+            if (!this.selectedEntry) return 1;
+            const idx = this.list.indexOf(this.selectedEntry);
+            return idx >= 0 ? idx + 1 : this.selected + 1;
         },
         level() {
-            return this.selectedEntry ? this.selectedEntry.level : null;
+            return this.selectedEntry ? this.selectedEntry[0] : null;
         },
         video() {
-            if (!this.level) return "";
             if (!this.level.showcase) {
                 return embed(this.level.verification);
             }
@@ -209,3 +201,12 @@ export default {
 
         // Error handling
         if (!this.list) {
+            this.errors = [
+                "Failed to load list. Retry in a few minutes or notify list staff.",
+            ];
+        } else {
+            this.errors.push(
+                ...this.list
+                    .filter(([_, err]) => err)
+                    .map(([_, err]) => {
+                        return `Failed to load level. (${err}.json)`;
