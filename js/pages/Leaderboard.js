@@ -6,6 +6,7 @@ export default {
   components: { Spinner },
   data: () => ({
     leaderboard: [],
+    nationalities: {},
     loading: true,
     selected: 0,
     err: [],
@@ -58,10 +59,29 @@ export default {
     const [leaderboard, err] = await fetchLeaderboard();
     this.leaderboard = leaderboard;
     this.err = err;
+
+    try {
+      const res = await fetch("./data/_nationalities.json");
+      if (res.ok) {
+        const raw = await res.json();
+        // Store keys in lowercase for case-insensitive matching
+        this.nationalities = Object.fromEntries(
+          Object.entries(raw).map(([k, v]) => [k.toLowerCase(), v.toLowerCase()])
+        );
+      }
+    } catch (e) {
+      // Ignore if _nationalities.json hasn't been created yet
+    }
+
     this.loading = false;
   },
   methods: {
     localize,
+    getFlagUrl(username) {
+      if (!username) return null;
+      const code = this.nationalities[username.toLowerCase()];
+      return code ? `https://flagcdn.com{code}.png` : null;
+    },
   },
   template: `
     <main v-if="loading">
@@ -91,6 +111,12 @@ export default {
               </td>
               <td class="user" :class="{ 'active': selected === i }">
                 <button @click="selected = i">
+                  <img
+                    v-if="getFlagUrl(entry.user)"
+                    :src="getFlagUrl(entry.user)"
+                    :alt="entry.user"
+                    style="vertical-align: middle; margin-right: 6px; border-radius: 2px;"
+                  />
                   <span class="type-label-lg">{{ entry.user }}</span>
                 </button>
               </td>
@@ -103,7 +129,16 @@ export default {
         <!-- Details panel: only display if there is a valid selection -->
         <div class="player-container" v-if="selectedEntry">
           <div class="player">
-            <h1>#{{ selectedRank }} {{ selectedEntry.user }}</h1>
+            <h1>
+              #{{ selectedRank }}
+              <img
+                v-if="getFlagUrl(selectedEntry.user)"
+                :src="getFlagUrl(selectedEntry.user)"
+                :alt="selectedEntry.user"
+                style="vertical-align: middle; margin: 0 6px; border-radius: 2px;"
+              />
+              {{ selectedEntry.user }}
+            </h1>
             <h3>{{ localize(selectedEntry.total) }}</h3>
             <h3 v-if="selectedHardest">
               Hardest Demon: <a target="_blank" :href="selectedHardest.link">{{ selectedHardest.level }}</a>
