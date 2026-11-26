@@ -23,7 +23,7 @@
   {
     "name": "Nine Circles Pack",
     "color": "#f50f1e",
-      "score": 250,
+      "score": 100,
     "levels": [
       100007,
       100008,
@@ -33,7 +33,7 @@
   {
     "name": "Shrek Pack",
     "color": "#0c6b18",
-      "score": 100,
+      "score": 75,
     "levels": [
       100010,
       100011,
@@ -43,7 +43,7 @@
   {
     "name": "Dylpnaner Pack",
     "color": "#6a6b0c",
-      "score": 200,
+      "score": 150,
     "levels": [
       100013,
       100014,
