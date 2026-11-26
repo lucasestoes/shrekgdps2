@@ -22,13 +22,15 @@ export default {
         </main>
         <main v-else class="page-list">
             <div class="list-container">
-                <table class="list" v-if="list">
-                    <tr v-for="([level, err], i) in list">
+                <div class="search-bar">
+                    <input type="text" v-model="searchQuery" placeholder="Search levels..." />
+                </div>
+                <table class="list" v-if="filteredList.length > 0">
+                    <tr v-for="({ item: [level, err], originalIndex }, i) in filteredList" :key="originalIndex">
                         <td class="rank"> 
-                        <p v-if="i + 1 <= 10" class="type-label-lg" class="top10">#{{ i + 1 }}</p>
-                         <p v-else-if="i + 1 <= 100" class="type-label-lg">#{{ i + 1 }}</p>
-                         <p v-else-if="i + 1 <= 150" class="extended">#{{ i + 1 }}</p>
-                         <p v-else-if="i + 1 > 150" class="extended">#{{ i + 1 }}</p>
+                            <p v-if="originalIndex + 1 <= 10" class="type-label-lg top10">#{{ originalIndex + 1 }}</p>
+                            <p v-else-if="originalIndex + 1 <= 100" class="type-label-lg">#{{ originalIndex + 1 }}</p>
+                            <p v-else class="extended">#{{ originalIndex + 1 }}</p>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
@@ -37,6 +39,9 @@ export default {
                         </td>
                     </tr>
                 </table>
+                <p v-else class="no-results">
+                    No levels found for "{{ searchQuery }}"
+                </p>
             </div>
             <div class="level-container">
                 <div class="level" v-if="level">
@@ -54,7 +59,7 @@ export default {
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points:</div>
-                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
+                            <p>{{ score(selectedOriginalRank, 100, level.percentToQualify) }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Difficulty:</div>
@@ -66,8 +71,8 @@ export default {
                         </li>
                     </ul>
                     <h2>Records</h2>
-                    <p v-if="selected + 1 <= 50"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
-                    <p v-else-if="selected +1 <= 100"><strong>100%</strong> required (Extended List)</p>
+                    <p v-if="selectedOriginalRank <= 50"><strong>{{ level.percentToQualify }}%</strong> required (Main List)</p>
+                    <p v-else-if="selectedOriginalRank <= 100"><strong>100%</strong> required (Extended List)</p>
                     <p v-else><strong>100%</strong> required (Legacy List)</p>
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
@@ -79,8 +84,8 @@ export default {
                             </td>
                             <td class="mobile">
                                 <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
-              
-                      
+                            </td>
+                        </tr>
                     </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
@@ -108,8 +113,8 @@ export default {
                     <h3>Submission Requirements</h3>
     
                     <p>
-                       A list of allowed hacks/mods can be found here: <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit?gid=1745390460#gid=1745390460"" target=""><u>Spreadsheet</u></a>
-                       </p>
+                       A list of allowed hacks/mods can be found here: <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit?gid=1745390460#gid=1745390460" target="_blank"><u>Spreadsheet</u></a>
+                    </p>
                     <p>
                         Achieved the record without using hacks (however, any FPS is allowed)
                     </p>
@@ -121,8 +126,8 @@ export default {
                     </p>
                     <p>
                       The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.
-                      </p>
-                      <p>
+                    </p>
+                    <p>
                       The recording must also show the player hit the endwall, and display end stats, or the completion will be invalidated.
                     </p>
                     <p>
@@ -150,10 +155,38 @@ export default {
         roleIconMap,
         store,
         toggledShowcase: false,
+        searchQuery: "",
     }),
+    watch: {
+        searchQuery() {
+            this.selected = 0;
+        },
+    },
     computed: {
+        filteredList() {
+            const indexed = (this.list || []).map((item, originalIndex) => ({
+                item,
+                originalIndex,
+            }));
+            if (!this.searchQuery) return indexed;
+            const q = this.searchQuery.toLowerCase();
+            return indexed.filter(({ item: [lvl] }) => {
+                if (!lvl) return false;
+                return (
+                    (lvl.name && lvl.name.toLowerCase().includes(q)) ||
+                    (lvl.author && lvl.author.toLowerCase().includes(q)) ||
+                    (lvl.verifier && lvl.verifier.toLowerCase().includes(q))
+                );
+            });
+        },
+        selectedEntry() {
+            return this.filteredList[this.selected] || null;
+        },
+        selectedOriginalRank() {
+            return this.selectedEntry ? this.selectedEntry.originalIndex + 1 : 1;
+        },
         level() {
-            return this.list[this.selected][0];
+            return this.selectedEntry ? this.selectedEntry.item[0] : null;
         },
         video() {
             if (!this.level.showcase) {
@@ -179,21 +212,3 @@ export default {
             ];
         } else {
             this.errors.push(
-                ...this.list
-                    .filter(([_, err]) => err)
-                    .map(([_, err]) => {
-                        return `Failed to load level. (${err}.json)`;
-                    })
-            );
-            if (!this.editors) {
-                this.errors.push("Failed to load list editors.");
-            }
-        }
-
-        this.loading = false;
-    },
-    methods: {
-        embed,
-        score,
-    },
-};
