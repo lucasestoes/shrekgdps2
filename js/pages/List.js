@@ -25,13 +25,12 @@ export default {
                 <div class="search-bar">
                     <input type="text" v-model="searchQuery" placeholder="Search levels..." />
                 </div>
-                <table class="list" v-if="list">
+                <table class="list" v-if="filteredList.length > 0">
                     <tr v-for="([level, err], i) in filteredList" :key="i">
                         <td class="rank"> 
-                        <p v-if="getOriginalRank(level, err) <= 10" class="type-label-lg" class="top10">#{{ getOriginalRank(level, err) }}</p>
-                         <p v-else-if="getOriginalRank(level, err) <= 100" class="type-label-lg">#{{ getOriginalRank(level, err) }}</p>
-                         <p v-else-if="getOriginalRank(level, err) <= 150" class="extended">#{{ getOriginalRank(level, err) }}</p>
-                         <p v-else-if="getOriginalRank(level, err) > 150" class="extended">#{{ getOriginalRank(level, err) }}</p>
+                            <p v-if="getOriginalRank(level, err) <= 10" class="type-label-lg top10">#{{ getOriginalRank(level, err) }}</p>
+                            <p v-else-if="getOriginalRank(level, err) <= 100" class="type-label-lg">#{{ getOriginalRank(level, err) }}</p>
+                            <p v-else class="extended">#{{ getOriginalRank(level, err) }}</p>
                         </td>
                         <td class="level" :class="{ 'active': selected == i, 'error': !level }">
                             <button @click="selected = i">
@@ -41,7 +40,7 @@ export default {
                     </tr>
                 </table>
                 <p v-if="filteredList.length === 0" class="no-results">
-                    No levels found for "{{ searchQuery }}"
+                    No results found for "{{ searchQuery }}"
                 </p>
             </div>
             <div class="level-container">
@@ -64,11 +63,11 @@ export default {
                         </li>
                         <li>
                             <div class="type-title-sm">Difficulty:</div>
-                            <p>{{ level.difficulty}}</p>
+                            <p>{{ level.difficulty }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">Peak Placement</div>
-                            <p>{{ level.pplacement}}</p>
+                            <p>{{ level.pplacement }}</p>
                         </li>
                     </ul>
                     <h2>Records</h2>
@@ -85,8 +84,8 @@ export default {
                             </td>
                             <td class="mobile">
                                 <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
-              
-                      
+                            </td>
+                        </tr>
                     </table>
                 </div>
                 <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
@@ -99,7 +98,7 @@ export default {
                         <p class="error" v-for="error of errors">{{ error }}</p>
                     </div>
                     <div class="og">
-                        <p class="type-label-md">Original List by <a href="https://sites.google.com/view/tak-land/home" target="_blank">TAK.com</a></p>
+                        <p class="type-label-md">Original List by <a href="https://google.com" target="_blank">TAK.com</a></p>
                     </div>
                     <template v-if="editors">
                         <h3>List Editors</h3>
@@ -114,8 +113,8 @@ export default {
                     <h3>Submission Requirements</h3>
     
                     <p>
-                       A list of allowed hacks/mods can be found here: <a href="https://docs.google.com/spreadsheets/d/1evE4nXATxRAQWu2Ajs54E6cVUqHBoSid8I7JauJnOzg/edit?gid=1745390460#gid=1745390460"" target=""><u>Spreadsheet</u></a>
-                       </p>
+                       A list of allowed hacks/mods can be found here: <a href="https://google.com" target="_blank"><u>Spreadsheet</u></a>
+                    </p>
                     <p>
                         Achieved the record without using hacks (however, any FPS is allowed)
                     </p>
@@ -127,8 +126,8 @@ export default {
                     </p>
                     <p>
                       The recording must have a previous attempt and entire death animation shown before the completion, unless the completion is on the first attempt.
-                      </p>
-                      <p>
+                    </p>
+                    <p>
                       The recording must also show the player hit the endwall, and display end stats, or the completion will be invalidated.
                     </p>
                     <p>
@@ -167,8 +166,8 @@ export default {
         filteredList() {
             if (!this.searchQuery) return this.list;
             const q = this.searchQuery.toLowerCase();
-            return this.list.filter(([lvl]) =>
-                lvl && lvl.name && lvl.name.toLowerCase().includes(q)
+            return this.list.filter(
+                ([lvl]) => lvl && lvl.name && lvl.name.toLowerCase().includes(q)
             );
         },
         selectedEntry() {
@@ -183,6 +182,7 @@ export default {
             return this.selectedEntry ? this.selectedEntry[0] : null;
         },
         video() {
+            if (!this.level) return "";
             if (!this.level.showcase) {
                 return embed(this.level.verification);
             }
@@ -211,9 +211,8 @@ export default {
                     .map(([_, err]) => {
                         return `Failed to load level. (${err}.json)`;
                     })
-);
-if (!this.editors) {
-this.errors.push("Failed to load list editors.");
+            );
+            if (!this.editors) { this.errors.push("Failed to load list editors.");
 }
 }
 this.loading = false;
