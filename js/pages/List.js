@@ -210,3 +210,22 @@ export default {
                     .filter(([_, err]) => err)
                     .map(([_, err]) => {
                         return `Failed to load level. (${err}.json)`;
+                    })
+);
+if (!this.editors) {
+this.errors.push("Failed to load list editors.");
+}
+}
+this.loading = false;
+},
+methods: {
+embed,
+score,
+getOriginalRank(level, err) {
+const idx = this.list.findIndex(
+([l, e]) => (level && l === level) || (err && e === err)
+);
+return idx >= 0 ? idx + 1 : 1;
+},
+},
+};
