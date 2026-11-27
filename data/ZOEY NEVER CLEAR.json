@@ -35,6 +35,13 @@
         	"percent": 100,
         	"hz": 120,
             "mobile": true
-    	}
+    	},
+        {
+            "user": "Riku",
+        	"link": "https://youtu.be/rrjvujYwGq4",
+        	"percent": 100,
+        	"hz": 120,
+            "mobile": true
+        }
 	]
 }
