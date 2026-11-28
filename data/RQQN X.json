@@ -11,5 +11,11 @@
     "difficulty": "Insane Demon",
         "pplacement": "7",
     "records": [
+      {
+            "user": "lucasestoes",
+            "link": "https://www.youtube.com/live/WzFV39-PAGk?si=xhQRXFczGX3lDubJ&t=9587",
+            "percent": 100,
+            "hz": 120
+        }
     ]
 }
